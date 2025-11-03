@@ -1,0 +1,18 @@
+[user]
+    name = vignesh-g-05 
+    email = vignesh2805vky@gmail.com
+
+[core]
+    editor = nvim
+    pager = bat
+    autocrlf = input
+
+[color]
+    ui = auto
+
+[init]
+    defaultBranch = main
+
+[merge]
+    conflictstyle = diff3
+
