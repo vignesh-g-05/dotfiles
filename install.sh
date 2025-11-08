@@ -6,10 +6,10 @@ echo "Setting up your Linux environment..."
 # Detect package manager
 if command -v apt &>/dev/null; then
     PKG_INSTALL="sudo apt install -y"
-    UPDATE_CMD="sudo apt update"
+    UPDATE_CMD="sudo apt update && sudo apt upgrade -y"
 elif command -v dnf &>/dev/null; then
     PKG_INSTALL="sudo dnf install -y"
-    UPDATE_CMD="sudo dnf update -y"
+    UPDATE_CMD="sudo dnf upgrade -y"
 elif command -v pacman &>/dev/null; then
     PKG_INSTALL="sudo pacman -S --noconfirm"
     UPDATE_CMD="sudo pacman -Syu --noconfirm"
@@ -19,23 +19,21 @@ else
 fi
 
 # Update system
+echo "Updating system..."
 $UPDATE_CMD
 
 # Base tools
 echo "Installing base tools..."
 $PKG_INSTALL git curl wget zsh stow unzip
 
-# Developer tools
+# Developer tools (NVM will handle Node)
 echo "Installing developer tools..."
-$PKG_INSTALL neovim nodejs npm
+$PKG_INSTALL neovim
 
 # Terminal tools
-$PKG_INSTALL bat eza fzf ripgrep fd-find fastfetch
+$PKG_INSTALL bat eza fzf ripgrep fd fastfetch zoxide wezterm
 
-# Optional utilities
-$PKG_INSTALL zoxide tmux trash-cli
-
-# Fix command naming differences
+# Fix command naming differences (mostly for Debian/Ubuntu)
 mkdir -p ~/.local/bin
 if command -v fdfind &>/dev/null && ! command -v fd &>/dev/null; then
     ln -sf "$(command -v fdfind)" ~/.local/bin/fd
@@ -62,7 +60,24 @@ if ! command -v atuin &>/dev/null; then
     curl -s https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh | bash -s -- --yes
 fi
 
-# Install fonts
+# Zsh plugins -----------------------------------------------------
+ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+
+# zsh-syntax-highlighting
+if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting" ]; then
+    echo "Installing zsh-syntax-highlighting..."
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+        "${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting"
+fi
+
+# zsh-autocomplete
+if [ ! -d "${ZSH_CUSTOM}/plugins/zsh-autocomplete" ]; then
+    echo "Installing zsh-autocomplete..."
+    git clone https://github.com/marlonrichert/zsh-autocomplete.git \
+        "${ZSH_CUSTOM}/plugins/zsh-autocomplete"
+fi
+
+# Fonts -----------------------------------------------------------
 FONT_DIR="$HOME/.local/share/fonts"
 mkdir -p "$FONT_DIR"
 
