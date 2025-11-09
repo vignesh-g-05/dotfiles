@@ -10,7 +10,7 @@ return {
 				width = 30,
 			},
 		})
-		map({ "n", "i", "v" }, "<leader>e", ":NvimTreeToggle<CR>", getOptions())
-		map({ "n", "i", "v" }, "<leader>ef", ":NvimTreeFocus<CR>", getOptions("[E]xplorer [F]ocus"))
+		map({ "n", "v" }, "<leader>e", ":NvimTreeToggle<CR>", getOptions())
+		map({ "n", "v" }, "<leader>ef", ":NvimTreeFocus<CR>", getOptions("[E]xplorer [F]ocus"))
 	end,
 }
