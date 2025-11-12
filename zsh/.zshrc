@@ -13,8 +13,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Exports
 export EDITOR="nvim"
 export VISUAL="nvim"
-export PATH="$HOME/.local/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 [ -f "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
