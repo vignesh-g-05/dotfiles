@@ -1,0 +1,32 @@
+{
+
+    "custom/logo": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/clock": {
+        "exec": "~/.config/waybar/scripts/analog-clock.sh",
+        "interval": 1,
+        "return-type": "json"
+    },
+
+    "clock": {
+        "format": "󰃵 {:%d %b}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#bd93f9'><b>{}</b></span>",      
+                "days": "<span color='#f8f8f2'><b>{}</b></span>",      
+                "weekdays": "<span color='#50fa7b'><b>{}</b></span>",      
+                "today": "<span color='#ff79c6'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click": "mode"
+        }
+    }
+}

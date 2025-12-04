@@ -5,7 +5,7 @@ return {
 			options = {
 				icons_enabled = true,
 				theme = "dracula",
-				section_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
 				component_separators = { left = "", right = "" },
 				disabled_filetypes = { "alpha", "neo-tree", "Avante" },
 				always_divide_middle = true,

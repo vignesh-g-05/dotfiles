@@ -1,0 +1,21 @@
+
+#custom-logo, 
+#custom-clock,
+#clock{ 
+  border-radius: 0 10px;
+}
+
+#custom-logo {
+  padding: 0px 10px;
+}
+
+#custom-logo {
+  color: @purple;
+}
+#custom-clock {
+  color: @cyan;
+}
+
+#clock {
+  color: @pink;
+}

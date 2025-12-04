@@ -108,7 +108,7 @@ style = 'green italic'
 [sudo]
 format = "[$symbol]($style)"
 style = "bold italic bright-purple"
-symbol = "󰭿"
+symbol = "󰳭 "
 disabled = false
 
 [username]
@@ -135,7 +135,7 @@ format = "[󰥔  $duration ](italic #8BE9FD)"
 [jobs]
 format = "[$symbol$number]($style) "
 style = "white"
-symbol = "[󰗢](#8BE9FD italic)"
+symbol = "[󱟓 ](#8BE9FD italic)"
 
 [localip]
 ssh_only = true

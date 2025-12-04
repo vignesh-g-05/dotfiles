@@ -1,0 +1,23 @@
+
+#workspaces {
+  border-radius: 0 10px;
+  padding: 6px 10px;
+  background-color: @background-darker;
+}
+
+#workspaces button {
+  background: linear-gradient(145deg, @background-darker, @background);
+  color: @cyan;
+  border-radius: 0 5;
+  min-height: 20px;
+  min-width: 24px;
+  padding: 0 6px;
+  margin: 0 4px;
+  transition: all 0.5s ease-in-out;
+}
+
+#workspaces button.active {
+  background: @cyan;
+  color: @background;
+}
+

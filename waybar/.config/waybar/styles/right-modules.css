@@ -1,0 +1,50 @@
+#backlight,
+#pulseaudio,
+#network,
+#battery,
+#custom-notification,
+#custom-power {
+  border-radius: 10px 0;
+}
+
+#backlight {
+  color: @green;
+}
+
+#pulseaudio {
+  color: @yellow;
+  min-width: 60px;
+}
+
+#pulseaudio.muted {
+  color: @red;
+}
+
+#network {
+  color: @pink;
+}
+
+#battery.charging {
+  color: @green; 
+}
+
+#battery.good:not(.charging) {
+  color: @cyan;
+}
+
+#battery.warning:not(.charging) {
+  color: @orange;
+}
+
+#battery.critical:not(.charging) {
+  animation: battery-breath 1.3s infinite ease-in-out;
+}
+
+#custom-notification {
+  color: @purple;
+}
+
+#custom-power {
+  color: @red;
+}
+

@@ -1,0 +1,89 @@
+@import url("../../styles/colors.css"); /* ~/.config/styles/colors.css */
+@import url("./left-modules.css");
+@import url("./center-modules.css");
+@import url("./right-modules.css");
+
+/* --- BASE STYLES --- */
+* {
+  border: none;
+  font-family: "JetBrainsMono Nerd Font Propo, JetBrainsMono NF" ;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  margin: 10px;
+  margin-bottom: 0px;
+}
+
+#clock,
+#custom-clock,
+#custom-logo, 
+#backlight,
+#pulseaudio,
+#network,
+#battery,
+#custom-notification,
+#custom-power {
+  background-color: @background-darker;
+  padding: 0px 15px;
+  margin: 0 10px;
+}
+
+/* --- CIRCLE MODULES --- */
+#custom-logo, 
+#custom-power {
+  padding: 10;
+  border-radius: 999px;
+  min-width: 15px;
+  min-height: 15px;
+  font-size: 10px;
+}
+
+/* --- TOOLTIP --- */
+tooltip { 
+  background-color: @background;
+  border-radius: 10px;
+  animation: tooltipFade 0.18s ease-out;
+  transition: opacity 0.2s ease;
+}
+
+tooltip label {
+  background-color: @background;
+  color: @foreground;
+}
+tooltip box {
+  padding: 5px;
+}
+
+/* --- ANIMATIONS --- */
+
+@keyframes battery-breath {
+  0% {
+    color: #ff4f4f;
+    text-shadow: 0 0 2px #ff4f4f;
+  }
+  50% {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+  }
+  100% {
+    color: #ff4f4f;
+    text-shadow: 0 0 2px #ff4f4f;
+  }
+}
+
+@keyframes tooltipFade {
+  from {
+    opacity: 0;
+    margin-top: 6px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}

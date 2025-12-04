@@ -1,0 +1,104 @@
+{
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "tooltip": false, 
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "mute ",
+        "format-bluetooth":"󰂰",
+        "format-icons": {
+            "headphones": "",
+            "bluetooth": "󰥰",
+            "handsfree": "",
+            "headset": "󱡬",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["🕨","🕩","🕪"]
+        },
+        "justify": "center",
+        "on-click": "amixer sset Master toggle"
+    },
+
+    "network": {
+        "interface": "wlp2s0",
+        "interval": 5,
+        "format": "{ifname}",
+        "format-wifi": "{signalStrength}% {icon}",
+        "format-ethernet": "",
+        "format-disconnected": "",
+        "format-disabled": "󰤭",
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid} | {bandwidthDownBits}",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format-disabled": "Wifi Disabled",
+        "max-length": 50,
+        "format-icons": {
+            "wifi": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+        }
+    },
+
+    "battery": {
+        "interval":1,
+        "states": {
+            "good": 95,
+            "warning": 40,
+            "critical": 20
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% 󰂄 ",
+        "format-icons": [
+            "󰁻",
+            "󰁼",
+            "󰁾",
+            "󰂀",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+
+
+    "custom/notification": {
+        "tooltip": true,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󱅫",
+            "none": "󰂜",
+            "dnd-notification": "󰂠",
+            "dnd-none": "󰪓",
+            "inhibited-notification": "󰂛",
+            "inhibited-none": "󰪑",
+            "dnd-inhibited-notification": "󰂛",
+            "dnd-inhibited-none": "󰪑"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    }
+}
