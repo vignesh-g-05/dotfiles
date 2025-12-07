@@ -1,0 +1,41 @@
+widget-mpris {
+    border-radius:  16px;
+    color: @foreground;
+    padding: 16px;
+    margin:  20px 6px;
+}
+ 
+.widget-mpris button {
+  color: alpha(@foreground, .9);
+  border-radius: 6px;
+}
+
+
+.widget-mpris-player {
+  background: alpha(@background, .5)
+}
+
+.widget-mpris button:hover {
+  color: @foreground;
+}
+
+.widget-mpris-player {
+    padding: 6px 10px;
+    margin: 10px;
+    border-radius: 14px;
+}
+
+.widget-mpris-album-art {
+  border-radius: 50%;
+}
+ 
+.widget-mpris-title {
+    font-weight: 700;
+    font-size: 1rem;
+}
+ 
+.widget-mpris-subtitle {
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+

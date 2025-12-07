@@ -10,7 +10,7 @@
 }
 
 #custom-logo {
-  color: @purple;
+  color: @color1;
 }
 #custom-clock {
   color: @cyan;

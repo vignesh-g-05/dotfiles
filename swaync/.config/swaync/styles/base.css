@@ -1,0 +1,8 @@
+* {
+  color: @foreground;
+  all: unset;
+  font-size: 0.95rem;
+  font-family: "JetBrains Mono Nerd Font Propo";
+  transition: 200ms;
+  font-weight: 700;
+}

@@ -1,0 +1,5 @@
+
+/* Avoid annoying background */
+.blank-window {
+  background: transparent;
+}

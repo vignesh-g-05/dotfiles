@@ -1,0 +1,39 @@
+.control-center {
+  background: @background; 
+  border-radius: 10px;
+  margin: 5px;
+  padding: 20px;
+}
+
+.control-center .notification-background {
+  border-radius: 0 10px;
+  background: @background;
+  margin: 7px 0;
+}
+
+/* Hide close buttons */
+.control-center .notification-background .close-button,
+.notification-group-close-button {
+  opacity: 0;
+}
+
+.notification-group {
+  margin: 0 8px;
+}
+
+.notification-group-headers {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.notification-group-headers > label {
+  font-size: 1rem;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: @selection;
+  margin: 5px;
+  border-radius: 5px 0;
+  padding: 5px;
+}

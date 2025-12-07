@@ -1,0 +1,9 @@
+@import url("../../.cache/wal/colors-waybar.css");
+@import url("../styles/colors.css");
+@import url("./styles/base.css");
+@import url("./styles/notification.css");
+@import url("./styles/control-center.css");
+@import url("./styles/widgets.css");
+@import url("./styles/mpris.css");
+@import url("./styles/buttons.css");
+@import url("./styles/layout.css");

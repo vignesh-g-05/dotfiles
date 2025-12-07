@@ -2,7 +2,7 @@
 @import url("./left-modules.css");
 @import url("./center-modules.css");
 @import url("./right-modules.css");
-
+@import url("../../../.cache/wal/colors-waybar.css");
 /* --- BASE STYLES --- */
 * {
   border: none;
@@ -29,7 +29,7 @@ window#waybar {
 #battery,
 #custom-notification,
 #custom-power {
-  background-color: @background-darker;
+  background: @background;
   padding: 0px 15px;
   margin: 0 10px;
 }

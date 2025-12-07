@@ -1,0 +1,100 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "cssPriority": "user",
+  "control-center-width": 400,
+  "fit-to-screen": true,
+
+  "notification-window-width": 400,
+  "notification-icon-size": 40,
+  "notification-body-image-height": 500,
+  "notification-body-image-width": 500,
+  "notification-inline-replies": true,
+  "notification-2fa-action": false,
+
+  "timeout": 4,
+  "timeout-low": 4,
+  "timeout-critical": 6,
+
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": false,
+  "script-fail-notify": true,
+
+  "widgets": [
+    "buttons-grid",
+    "menubar",
+    "mpris",
+    "volume",
+    "backlight",
+    "title",
+    "notifications"
+  ],
+
+  "widget-config": {
+    "backlight": {
+      "label": "󰃟",
+      "min": 10
+    },
+
+    "volume": {
+      "label": ""
+    },
+
+    "dnd": {
+      "text": "Do not disturb"
+    },
+
+    "title": {
+      "button-text": ""
+    },
+
+    "mpris": {
+      "image-size": 60
+    },
+
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "󰤨",
+          "type": "toggle",
+          "command": "sh -c '~/.config/swaync/scripts/toggle-wifi.sh'",
+          "update-command": "sh -c 'set +e;[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+        },
+        {
+          "label": "󰖁",
+          "type": "toggle",
+          "command": "sh -c '~/.config/swaync/scripts/toggle-mute-audio.sh'",
+          "update-command": "sh -c 'set +e;pactl get-sink-mute @DEFAULT_SINK@ | grep -q no && echo false || echo true'"
+        },
+        {
+          "label": "󰍭",
+          "type": "toggle",
+          "command": "sh -c '~/.config/swaync/scripts/toggle-mute-microphone.sh'",
+          "update-command": "sh -c 'set +e;pactl get-source-mute @DEFAULT_SOURCE@ | grep -q no && echo false || echo true'"
+        },
+        {
+          "label": "󰤄",
+          "type": "toggle",
+          "command": "sh -c '~/.config/swaync/scripts/toggle-dnd.sh'",
+          "update-command": "swaync-client -D"
+        },
+        {
+          "label": "",
+          "command": "sh -c 'set +e;swaync-client -t;hyprshot -m window'"
+        }
+      ]
+    }
+  },
+
+  "scripts": {
+    "play-sound": {
+      "exec": "sh -c '~/.config/swaync/scripts/notify-sound.sh'",
+      "app-name": ".*",
+      "run-on": "receive"
+    }
+  }
+}

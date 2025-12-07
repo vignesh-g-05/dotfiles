@@ -1,0 +1,116 @@
+/* --- Notification container --- */
+.notification {
+  padding: 14px 20px;
+  border-radius: 0 10px;
+  background: @background;
+  color: @foreground;
+}
+
+/* --- Outer wrapper --- */
+.notification-background {
+  background: @background;
+  border-radius: 16px;
+  margin: 10px;
+  border: 1px solid alpha(@foreground, 0.4);
+}
+
+/* --- Inline reply entry --- */
+.notification-row .inline-reply-entry {
+  padding: 6px 12px;
+  background: @background;
+  border-radius: 12px;
+  color: @foreground;
+}
+
+/* --- Inline reply button --- */
+.notification-row .inline-reply-button {
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: @cyan;
+  color: @background;
+}
+
+.notification-row .inline-reply .inline-reply-button:hover {
+  background: @red;
+}
+
+/* --- Text layout --- */
+.notification-content .text-box {
+  margin-left: 14px;
+}
+
+/* --- Timestamp --- */
+.notification-content .time {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: @color1;
+  padding: 2px 0;
+}
+
+/* --- Title --- */
+.notification .summary {
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 2px 0;
+  margin-bottom: 3px;
+  color: @foreground;
+}
+
+/* --- Body text --- */
+.notification .body {
+  font-size: 0.82rem;
+  color: @color1;
+}
+
+/* --- Critical border --- */
+.notification.critical {
+  border-left: 3px solid @red;
+}
+
+/* --- Progress bars --- */
+.notification.low progress,
+.notification.normal progress,
+.notification.critical progress {
+  background: @selection;
+  border-radius: 6px;
+}
+
+/* --- Close button --- */
+.notification-background .close-button {
+  border-radius: 8px;
+  padding: 3px;
+  margin: 6px;
+}
+
+.notification-background .close-button:hover {
+  background: @comment;
+  color: @background;
+}
+
+/* --- Action buttons --- */
+.notification > *:last-child > * {
+  min-height: 3.2em;
+}
+
+.notification > *:last-child > * .notification-action {
+  background: @comment;
+  border-radius: 8px;
+  margin: 0 6px 10px 6px;
+  padding: 4px 10px;
+  color: @background-darker;
+}
+
+.notification > *:last-child > * .notification-action:hover,
+.notification > *:last-child > * .notification-action:active {
+  background: @selection;
+  color: @foreground;
+}
+
+
+.notification-background .notification .image {
+  border-radius: 9999px;
+  margin: 10px 16px 10px 0;
+  padding: 0;
+}
+
+

@@ -1,0 +1,75 @@
+
+/* Do Not Disturb */
+.widget-dnd {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.widget-dnd > label {
+  font-size: 1rem;
+}
+
+.widget-dnd switch {
+  background: @selection;
+  border-radius: 5px 0;
+  padding: 2px;
+}
+
+.widget-dnd switch slider {
+  background: @foreground;
+  border-radius: 5px 0;
+}
+
+/* Title sections */
+.widget-title {
+  padding: 8px 20px;
+  border-radius: 0 10px;
+  font-weight: 800;
+  background: @background;
+}
+
+.widget-title button {
+  background: linear-gradient(-45deg, alpha(@foreground, 0.15), alpha(@foreground, 0.05));
+  padding: 5px 20px;
+  border-radius: 5px 0;
+}
+
+.widget-title button:hover {
+  background: @color1;
+}
+
+/* Volume & Backlight */
+.widget-volume,
+.widget-backlight {
+  padding: 8px 14px;
+  margin-bottom: 20px;
+  border-radius: 0 10px;
+  font-weight: 800;
+}
+
+.widget-volume label,
+.widget-backlight label {
+  font-size: 1.1rem;
+}
+
+.widget-volume slider,
+.widget-backlight slider {
+  border-radius: 3px 0;
+  margin: -6px;
+  background: @foreground;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.15), 0 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.widget-volume trough,
+.widget-backlight trough {
+  background: linear-gradient(-45deg, alpha(@foreground, 0.15), alpha(@foreground, 0.05));
+  margin-left: 8px;
+  border-radius: 12px;
+}
+
+.widget-volume highlight,
+.widget-backlight highlight {
+  padding: 3.5px;
+  border-radius: 12px;
+  background: @color1;
+}
