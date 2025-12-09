@@ -1,0 +1,92 @@
+/* --- IMPORT COLOR VARIABLES --- */
+@import url("../../.cache/wal/colors-waybar.css");
+
+
+/* --- GLOBAL RESET --- */
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    background-color: alpha(@background, 0.15);
+}
+
+
+/* --- BASE BUTTON STYLE --- */
+button {
+    border: 2px solid alpha(@foreground, 0.25);
+    background-color: alpha(@background, 0.75);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    transition: background-color 0.5s ease, 
+                box-shadow 0.5s ease, 
+                border-radius 0.5s ease,
+                margin 0.5s ease;
+    box-shadow: 8px 8px 16px alpha(black, 0.35);
+    margin: 95px 0px;
+    padding: 70px 40px;
+    border-radius: 14px;
+}
+
+
+/* --- BUTTON HOVER / FOCUS / ACTIVE STATES --- */
+button:hover,
+button:focus,
+button:active {
+    background-color: alpha(@color1, 0.95);
+    outline-style: none;
+    margin: 90px 0px 100px;
+    border-radius: 999px;
+    box-shadow: 4px 4px 8px alpha(black, 0.20);
+}
+
+
+/* --- INDIVIDUAL BUTTON SHAPE PRESETS (BEFORE HOVER) --- */
+#shutdown,
+#lock {
+    border-radius: 20px 0px;
+}
+
+#reboot {
+    border-radius: 10px;
+}
+
+#suspend,
+#logout {
+    border-radius: 0px 20px;
+}
+
+
+/* --- INDIVIDUAL BUTTON SHAPE ON FOCUS --- */
+#shutdown:focus,
+#lock:focus,
+#reboot:focus,
+#hibernate:focus,
+#suspend:focus,
+#logout:focus {
+    border-radius: 999px;
+}
+
+
+/* --- BUTTON ICONS --- */
+#lock {
+    background-image: image(url("./icons/lock.png"), url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("./icons/logout.png"), url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("./icons/sleep.png"), url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#shutdown {
+    background-image: image(url("./icons/power.png"), url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("./icons/restart.png"), url("/usr/share/wlogout/icons/reboot.png"));
+}
