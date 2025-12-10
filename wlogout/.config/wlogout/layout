@@ -4,7 +4,7 @@
 }
 {
     "label" : "lock",
-    "action" : "hyprlock",
+    "action" : "loginctl lock-session",
 }
 {
     "label" : "reboot",
