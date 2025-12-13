@@ -1,12 +1,12 @@
 widget-mpris {
     border-radius:  16px;
-    color: @foreground;
+    color: @text-primary;
     padding: 16px;
     margin:  20px 6px;
 }
  
 .widget-mpris button {
-  color: alpha(@foreground, .9);
+  color: alpha(@text-primary, .9);
   border-radius: 6px;
 }
 
@@ -16,7 +16,7 @@ widget-mpris {
 }
 
 .widget-mpris button:hover {
-  color: @foreground;
+  color: @text-primary;
 }
 
 .widget-mpris-player {

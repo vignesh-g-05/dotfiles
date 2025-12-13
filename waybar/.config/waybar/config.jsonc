@@ -1,9 +1,23 @@
 {
     "layer": "top",
     "position": "top",
-    "modules-left": ["custom/logo", "custom/clock", "clock"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["backlight", "pulseaudio", "network",  "battery", "custom/notification", "custom/power" ],
+    "modules-left": [
+        "custom/logo",
+        "custom/clock",
+        "clock",
+        "backlight"
+    ],
+    "modules-center": [
+        "custom/theme-switcher",
+        "hyprland/workspaces",
+        "custom/notification"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "battery",
+        "custom/power"
+    ],
     "reload_style_on_change": true,
 
     "include": [

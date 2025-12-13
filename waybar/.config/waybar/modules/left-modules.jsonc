@@ -19,14 +19,33 @@
             "mode-mon-col": 3,
             "on-scroll": 1,
             "format": {
-                "months": "<span color='#bd93f9'><b>{}</b></span>",      
-                "days": "<span color='#f8f8f2'><b>{}</b></span>",      
+                "months": "<span color='#b38eed'><b>{}</b></span>",      
+                "days": "<span color='#d0d0e8'><b>{}</b></span>",      
                 "weekdays": "<span color='#50fa7b'><b>{}</b></span>",      
-                "today": "<span color='#ff79c6'><b><u>{}</u></b></span>"
+                "today": "<span color='#5fd7d3'><b><u>{}</u></b></span>"
             }
         },
         "actions": {
             "on-click": "mode"
         }
-    }
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "tooltip": false, 
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+
 }

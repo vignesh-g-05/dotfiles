@@ -1,7 +1,8 @@
 
 #custom-logo, 
 #custom-clock,
-#clock{ 
+#clock, 
+#backlight {
   border-radius: 0 10px;
 }
 
@@ -10,12 +11,16 @@
 }
 
 #custom-logo {
-  color: @color1;
+  color: @accent-primary;
 }
 #custom-clock {
-  color: @cyan;
+  color: @accent-secondary;
 }
 
 #clock {
-  color: @pink;
+  color: @highlight;
+}
+
+#backlight {
+  color: @success;
 }

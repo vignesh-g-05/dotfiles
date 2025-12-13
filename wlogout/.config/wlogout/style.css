@@ -1,5 +1,5 @@
 /* --- IMPORT COLOR VARIABLES --- */
-@import url("../../.cache/wal/colors-waybar.css");
+@import url("../styles/colors.css");
 
 
 /* --- GLOBAL RESET --- */
@@ -9,13 +9,13 @@
 }
 
 window {
-    background-color: alpha(@background, 0.15);
+    background-color: alpha(@background, 0.2);
 }
 
 
 /* --- BASE BUTTON STYLE --- */
 button {
-    border: 2px solid alpha(@foreground, 0.25);
+    border: 2px solid alpha(@text-primary, 0.25);
     background-color: alpha(@background, 0.75);
     background-repeat: no-repeat;
     background-position: center;
@@ -35,7 +35,7 @@ button {
 button:hover,
 button:focus,
 button:active {
-    background-color: alpha(@color1, 0.95);
+    background-color: alpha(@accent-primary, 0.95);
     outline-style: none;
     margin: 90px 0px 100px;
     border-radius: 999px;

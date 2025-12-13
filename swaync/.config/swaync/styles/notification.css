@@ -3,7 +3,9 @@
   padding: 14px 20px;
   border-radius: 0 10px;
   background: @background;
-  color: @foreground;
+  color: @text-primary;
+
+  border: 1px solid alpha(@text-primary, 0.4);
 }
 
 /* --- Outer wrapper --- */
@@ -11,7 +13,6 @@
   background: @background;
   border-radius: 16px;
   margin: 10px;
-  border: 1px solid alpha(@foreground, 0.4);
 }
 
 /* --- Inline reply entry --- */
@@ -19,19 +20,19 @@
   padding: 6px 12px;
   background: @background;
   border-radius: 12px;
-  color: @foreground;
+  color: @text-primary;
 }
 
 /* --- Inline reply button --- */
 .notification-row .inline-reply-button {
   padding: 6px 12px;
   border-radius: 12px;
-  background: @cyan;
+  background: @accent-secondary;
   color: @background;
 }
 
 .notification-row .inline-reply .inline-reply-button:hover {
-  background: @red;
+  background: @error;
 }
 
 /* --- Text layout --- */
@@ -43,7 +44,7 @@
 .notification-content .time {
   font-size: 0.9rem;
   font-weight: 700;
-  color: @color1;
+  color: @accent-primary;
   padding: 2px 0;
 }
 
@@ -53,25 +54,25 @@
   font-weight: 800;
   padding: 2px 0;
   margin-bottom: 3px;
-  color: @foreground;
+  color: @text-primary;
 }
 
 /* --- Body text --- */
 .notification .body {
   font-size: 0.82rem;
-  color: @color1;
+  color: @accent-primary;
 }
 
 /* --- Critical border --- */
 .notification.critical {
-  border-left: 3px solid @red;
+  border-left: 3px solid @error;
 }
 
 /* --- Progress bars --- */
 .notification.low progress,
 .notification.normal progress,
 .notification.critical progress {
-  background: @selection;
+  background: @highlight;
   border-radius: 6px;
 }
 
@@ -83,7 +84,7 @@
 }
 
 .notification-background .close-button:hover {
-  background: @comment;
+  background: @text-secondary;
   color: @background;
 }
 
@@ -93,17 +94,17 @@
 }
 
 .notification > *:last-child > * .notification-action {
-  background: @comment;
+  background: @text-secondary;
   border-radius: 8px;
   margin: 0 6px 10px 6px;
   padding: 4px 10px;
-  color: @background-darker;
+  color: @surface;
 }
 
 .notification > *:last-child > * .notification-action:hover,
 .notification > *:last-child > * .notification-action:active {
-  background: @selection;
-  color: @foreground;
+  background: @highlight;
+  color: @text-primary;
 }
 
 

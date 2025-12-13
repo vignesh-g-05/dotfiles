@@ -1,13 +1,14 @@
 
 #workspaces {
-  border-radius: 0 10px;
+  border-radius: 5px;
   padding: 6px 10px;
   background-color: @background;
 }
 
 #workspaces button {
   border-radius: 0 5;
-  background: linear-gradient(145deg, alpha(@foreground, .15), alpha(@foreground, .05));
+  background: linear-gradient(145deg, alpha(@text-primary, 0.1), alpha(@text-secondary, 0.1));
+  color: @text-primary;
   min-height: 20px;
   min-width: 24px;
   padding: 0 6px;
@@ -16,7 +17,12 @@
 }
 
 #workspaces button.active {
-  background: @color1;
+  background: @accent-primary;
   color: @background;
+}
+
+#custom-theme-switcher,
+#custom-notification {
+  color: @accent-primary;
 }
 

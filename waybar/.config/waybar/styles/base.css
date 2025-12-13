@@ -2,11 +2,12 @@
 @import url("./left-modules.css");
 @import url("./center-modules.css");
 @import url("./right-modules.css");
-@import url("../../../.cache/wal/colors-waybar.css");
+@import url("../../styles/colors.css");
+
 /* --- BASE STYLES --- */
 * {
   border: none;
-  font-family: "JetBrainsMono Nerd Font Propo, JetBrainsMono NF" ;
+  font-family: "JetBrainsMono Nerd Font Propo" ;
 }
 
 window#waybar {
@@ -20,14 +21,15 @@ window#waybar {
   margin-bottom: 0px;
 }
 
-#clock,
-#custom-clock,
 #custom-logo, 
+#custom-clock,
+#clock,
 #backlight,
+#custom-notification,
+#custom-theme-switcher,
 #pulseaudio,
 #network,
 #battery,
-#custom-notification,
 #custom-power {
   background: @background;
   padding: 0px 15px;
@@ -36,6 +38,8 @@ window#waybar {
 
 /* --- CIRCLE MODULES --- */
 #custom-logo, 
+#custom-notification,
+#custom-theme-switcher,
 #custom-power {
   padding: 10;
   border-radius: 999px;
@@ -47,21 +51,20 @@ window#waybar {
 /* --- TOOLTIP --- */
 tooltip { 
   background-color: @background;
-  border-radius: 10px;
+  border-radius: 7px 0;
   animation: tooltipFade 0.18s ease-out;
   transition: opacity 0.2s ease;
 }
 
 tooltip label {
   background-color: @background;
-  color: @foreground;
+  color: @text-primary;
 }
 tooltip box {
   padding: 5px;
 }
 
 /* --- ANIMATIONS --- */
-
 @keyframes battery-breath {
   0% {
     color: #ff4f4f;
