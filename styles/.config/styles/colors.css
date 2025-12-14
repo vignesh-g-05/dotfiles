@@ -1,10 +1,10 @@
 @define-color background       #1a1b26;
 @define-color surface          #222436;
-@define-color text-primary     #d0d0e8;
-@define-color text-secondary   #b0b0d0;
+@define-color text-primary     #d6d8ee;
+@define-color text-secondary   #a3accf;
 @define-color accent-primary   #b38eed;
 @define-color accent-secondary #5fd7d3;
-@define-color highlight        #c0b0f0;
+@define-color highlight        #9aa5ce;
 @define-color success          #50fa7b;
 @define-color warning          #f0b775;
 @define-color error            #f7768e;
