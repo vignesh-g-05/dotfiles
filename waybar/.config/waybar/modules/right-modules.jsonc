@@ -58,7 +58,7 @@
 
     "custom/power": {
         "format": "",
-        "on-click": "wlogout --buttons-per-row 5 --column-spacing 50",
+        "on-click": "~/.config/utils/power-menu.sh",
         "tooltip": false
     }
 }

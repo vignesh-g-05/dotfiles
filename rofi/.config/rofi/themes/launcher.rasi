@@ -1,0 +1,163 @@
+configuration {
+    display-drun: "";
+    show-icons: true;
+
+}
+
+window {
+    font:		"JetBrainsMono Nerd Font Propo 16";
+    fullscreen:		true;
+    padding:		0px;
+    margin:		0px;
+    background-color:	transparent;
+}
+
+mainbox {
+    children:	        [ "inputbar", "message", "listview" ];
+    background-color:   transparent;
+    spacing:            24px;
+    margin:             0px;
+    padding:            10% 15%;
+}
+
+inputbar {
+    children:	["placeholder", "prompt", "entry", "placeholder"];
+    background-color: transparent;
+    spacing:	20px;
+}
+
+placeholder {
+    background-color: transparent;
+}
+
+prompt {
+    background-color:	white / 15%;
+    color:	        white;
+    border-radius:      10px;
+    padding:            10px 15px;
+}
+
+entry {
+    expand:		false;
+    background-color:	white / 15%;
+    color:	        white / 80%;
+    padding:            10px 15px;
+    border-radius:      10px;
+    placeholder:        " ";
+    width:		40%;		
+}
+
+listview {
+    columns:	6;
+    scrollbar:	false;
+    spacing:    30px;
+    border:	none;
+    background-color: transparent;
+}
+
+element {
+    padding:		20px;
+    orientation:	vertical;
+    children:		["element-icon"];
+    background-color:	transparent;
+    border-radius:	10px;
+}
+
+element-icon {
+    padding:		20px;
+    size:		60px;
+    background-color:	transparent;
+}
+
+element normal.normal {
+    background-color:	transparent;
+}
+element alternate.normal {
+    background-color:	transparent;
+}
+element selected.normal {
+    background-color:	transparent;
+}
+configuration {
+    display-drun: "";
+    show-icons: true;
+
+    kb-accept-entry:	    "Control+o,Return,KP_Enter";
+    kb-remove-to-eol:	    "Control+Shift+k";
+    kb-mode-complete:	    "Control+Shift+l";
+    kb-remove-char-back:    "BackSpace,Shift+BackSpace";
+
+    kb-row-left:	    "Control+h";
+    kb-row-right:	    "Control+l";
+    kb-row-up:		    "Up,Control+k";
+    kb-row-down:	    "Down,Control+j";
+}
+
+window {
+    font:		"JetBrainsMono Nerd Font Propo 16";
+    fullscreen:		true;
+    padding:		0px;
+    margin:		0px;
+    background-color:	transparent;
+}
+
+mainbox {
+    children:	        [ "inputbar", "message", "listview" ];
+    background-color:   transparent;
+    spacing:            24px;
+    margin:             0px;
+    padding:            10% 15%;
+}
+
+inputbar {
+    children:	["placeholder", "prompt", "entry", "placeholder"];
+    spacing:	20px;
+}
+
+prompt {
+    background-color:	white / 15%;
+    color:	        white;
+    border-radius:      10px;
+    padding:            10px 15px;
+}
+
+entry {
+    expand:		false;
+    background-color:	white / 15%;
+    color:	        white / 80%;
+    padding:            10px 15px;
+    border-radius:      10px;
+    placeholder:        " ";
+    width:		40%;		
+}
+
+listview {
+    columns:	6;
+    scrollbar:	false;
+    spacing:    30px;
+    border:	none;
+}
+
+element {
+    padding:		20px;
+    orientation:	vertical;
+    children:		["element-icon"];
+    background-color:	transparent;
+    border-radius:	10px;
+}
+
+element-icon {
+    padding:		20px;
+    size:		60px;
+    background-color:	transparent;
+}
+
+element normal.normal {
+    background-color:	transparent;
+}
+element alternate.normal {
+    background-color:	transparent;
+}
+element selected.normal {
+    background-color:   white / 25%;
+}

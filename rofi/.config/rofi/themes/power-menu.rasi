@@ -1,0 +1,76 @@
+@import "~/.config/shared/styles/colors.conf"
+
+configuration {
+    show-icons: true;
+}
+
+window {
+    background-color:	black / 20%;
+    fullscreen:		true;
+    padding:		0px;
+    margin:		0px;
+    padding:		0px;
+}
+
+mainbox {
+    children:		["userimage", "listview"];
+    background-color:	transparent;
+}
+
+userimage {
+    orientation:        horizontal;
+    children:	        ["placeholder", "placeholder", "placeholder", "placeholder",  "placeholder","inner-user-image", "placeholder", "placeholder", "placeholder", "placeholder", "placeholder"];
+    spacing:	        0;
+    background-color:	transparent;
+}
+
+placeholder {
+    background-color:	transparent;
+}
+inner-user-image {
+    children:		["placeholder", "placeholder", "pfp"];
+    background-color:	transparent;
+}
+
+pfp {
+    background-color:	white / 30%;
+    border-radius:	50%;
+    background-image:	url("~/.config/hypr/images/pfp.jpg", both);
+}
+
+listview {
+    columns:		6;
+    line:		1;
+    scrollbar:		false;
+    spacing:		90px;
+    border:		none;
+    padding:		10%;
+    background-color:	transparent;
+}
+
+element {
+    orientation:    vertical;
+    children:	    ["element-text"];
+    border-radius:  50%;
+    padding:	    32px 30px;
+    border:	    5px solid;
+    border-color:   @accent-primary;
+}
+
+element-text {
+    font:		"JetBrainsMono Nerd Font Propo 40";
+    horizontal-align:   0.5;
+    color:		white;
+    background-color:	transparent;
+}
+
+element normal.normal {
+    background-color:	white / 25%;
+}
+element alternate.normal {
+    background-color:	white / 25%;
+}
+element selected.normal {
+    background-color:   @accent-primary;
+}
+

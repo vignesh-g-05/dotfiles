@@ -1,4 +1,4 @@
-@import url("../styles/colors.css");
+@import url("../shared/styles/colors.css");
 @import url("./styles/base.css");
 @import url("./styles/notification.css");
 @import url("./styles/control-center.css");

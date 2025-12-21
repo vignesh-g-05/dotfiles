@@ -1,8 +1,7 @@
-@import url("../../styles/colors.css"); /* ~/.config/styles/colors.css */
+@import url("../../shared/styles/colors.css"); /* ~/.config/shared/styles/colors.css */
 @import url("./left-modules.css");
 @import url("./center-modules.css");
 @import url("./right-modules.css");
-@import url("../../styles/colors.css");
 
 /* --- BASE STYLES --- */
 * {
