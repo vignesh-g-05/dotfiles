@@ -58,7 +58,7 @@
 
     "custom/power": {
         "format": "",
-        "on-click": "~/.config/utils/power-menu.sh",
+        "on-click": "~/.config/shared/scripts/power-menu.sh",
         "tooltip": false
     }
 }

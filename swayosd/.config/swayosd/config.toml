@@ -1,0 +1,7 @@
+[server]
+
+top_margin = 0.73
+
+show_percentage = true
+
+[client]

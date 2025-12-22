@@ -1,0 +1,53 @@
+@import "../shared/styles/colors.css";
+
+window#osd {
+  border-radius: 10px 0;
+  border: 2px solid @accent-primary;
+  background: @background;
+  font-family: "Space Grotesk, JetBrains Mono Nerd Font Propo";
+  font-size: 16px;
+  font-weight: bold;
+}
+
+window#osd #container {
+  background: transparent;
+  padding: 0 10px;
+}
+
+window#osd image {
+  -gtk-icon-transform: scale(0.9);
+}
+
+window#osd image,
+window#osd label {
+  color: @accent-primary;
+}
+
+window#osd label {
+  min-width:  50px;
+}
+window#osd progressbar:disabled,
+window#osd image:disabled {
+  opacity: 0.5;
+}
+
+window#osd progressbar {
+  min-height: 6px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+}
+
+window#osd trough {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: linear-gradient(145deg, alpha(@text-primary, 0.1), alpha(@text-secondary, 0.1));
+}
+
+window#osd progress {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: @accent-primary;
+}
