@@ -16,6 +16,7 @@
         "pulseaudio",
         "network",
         "battery",
+        "custom/battery-alert",
         "custom/power"
     ],
     "reload_style_on_change": true,

@@ -19,7 +19,7 @@
 
     "network": {
         "interface": "wlp2s0",
-        "interval": 5,
+        "interval": 10,
         "format": "{ifname}",
         "format-wifi": "{signalStrength}% {icon}",
         "format-ethernet": "",
@@ -37,7 +37,7 @@
     },
 
     "battery": {
-        "interval":1,
+        "interval": 30,
         "states": {
             "good": 100,
             "warning": 40,
@@ -54,6 +54,11 @@
             "󰂂",
             "󰁹"
         ]
+    },
+
+    "custom/battery-alert": {
+        "exec": "~/.config/waybar/scripts/battery-alert.sh",
+        "interval": 30
     },
 
     "custom/power": {

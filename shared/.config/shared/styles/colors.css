@@ -3,8 +3,9 @@
 @define-color text-primary     #d6d8ee;
 @define-color text-secondary   #a3accf;
 @define-color accent-primary   #b38eed;
-@define-color accent-secondary #5fd7d3;
+@define-color accent-secondary #edc6f2;
 @define-color highlight        #9aa5ce;
+
 @define-color success          #50fa7b;
 @define-color warning          #f0b775;
 @define-color error            #f7768e;
