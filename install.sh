@@ -17,10 +17,12 @@ if [[ "$is_package_install" == "y" ]]; then
     eval "$update"
 
     base_tools=(git curl wget zsh stow unzip nvim cargo fastfetch bat)
-    cargo_tools=(eza)
+    cargo_tools=(eza ctgen)
 
     install_packages "${base_tools[@]}"
     install_cargo_tools "${cargo_tools[@]}"
+
+    install_icons
 
     install_script "starship" "curl -sS https://starship.rs/install.sh | sh"
     install_script "atuin" "curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh"

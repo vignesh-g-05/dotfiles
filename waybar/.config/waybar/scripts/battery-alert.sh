@@ -21,7 +21,7 @@ fi
 next_alert_pct=$(< "$STATE_FILE")
 
 if (( current_battery_pct <= next_alert_pct )); then
-  notify-send -i battery-caution critical "Battery low" "Battery at ${current_battery_pct}%"
+  notify-send -i battery-caution -u critical "Battery low" "Battery at ${current_battery_pct}%"
 
   # calculate next alert
   if (( next_alert_pct > MIN_ALERT )); then

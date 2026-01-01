@@ -16,7 +16,7 @@ vim.cmd("filetype plugin on")
 -- Interface & Display --
 vim.o.number = true -- Show line numbers
 vim.o.relativenumber = true -- Show relative line numbers
-vim.o.cursorline = true -- Highlight the current line
+vim.o.cursorline = false -- Highlight the current line
 vim.o.signcolumn = "yes" -- Always show sign column (avoid text shifting)
 vim.o.termguicolors = true -- Enable 24-bit color support
 vim.o.wrap = false -- Don’t wrap long lines
