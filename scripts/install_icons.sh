@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 install_icons() {
-    ICONS_DIR="$HOME/.icons"
+    ICONS_DIR="/usr/share/icons/"
     THEME_NAME="Mkos-Big-Sur"
     THEME_REPO="https://github.com/zayronxio/Mkos-Big-Sur"
 
@@ -19,5 +19,3 @@ install_icons() {
         return 1
     fi
 }
-
-install_icons
