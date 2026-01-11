@@ -1,9 +1,9 @@
 [user]
-    name = vignesh-g-05 
+    name = vignesh-g-05
     email = vicky2805vky@gmail.com
 
 [core]
-    editor = nvim
+    editor = code
     pager = bat
     autocrlf = input
 
