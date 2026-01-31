@@ -18,6 +18,7 @@
     },
 
     "network": {
+        "on-click": "hyprltm-net",
         "interface": "wlp2s0",
         "interval": 10,
         "format": "{ifname}",
