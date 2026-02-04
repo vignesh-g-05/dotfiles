@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WATCH_DIR="$HOME/Pictures"
+WATCH_DIR="$HOME/Pictures/screenshots/"
 SOUND="$HOME/.config/shared/audio/screenshot-sound.mp3"
 
 if [[ $1 == "screen" ]]; then
