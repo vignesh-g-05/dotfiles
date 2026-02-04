@@ -14,13 +14,13 @@
             "default": ["🕨","🕩","🕪"]
         },
         "justify": "center",
-        "on-click": "amixer sset Master toggle"
+        "on-click": "swayosd-client --output-volume mute-toggle"
     },
 
     "network": {
-        "on-click": "hyprltm-net",
         "interface": "wlp2s0",
         "interval": 10,
+        "on-click": "~/.local/bin/hyprltm-net",
         "format": "{ifname}",
         "format-wifi": "{signalStrength}% {icon}",
         "format-ethernet": "",

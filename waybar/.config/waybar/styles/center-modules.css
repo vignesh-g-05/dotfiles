@@ -6,7 +6,7 @@
 }
 
 #workspaces button {
-  border-radius: 0 5;
+  border-radius: 0 5px;
   background: linear-gradient(145deg, alpha(@text-primary, 0.1), alpha(@text-secondary, 0.1));
   color: @text-primary;
   min-height: 20px;

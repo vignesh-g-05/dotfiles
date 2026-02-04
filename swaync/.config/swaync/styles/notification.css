@@ -63,7 +63,15 @@
   color: @accent-primary;
 }
 
-/* --- Critical border --- */
+/* --- Urgency border --- */
+.notification.low {
+  border-left: 3px solid @success;
+}
+
+.notification.normal {
+  border-left: 3px solid @warning;
+}
+
 .notification.critical {
   border-left: 3px solid @error;
 }

@@ -84,7 +84,7 @@
         },
         {
           "label": "",
-          "command": "sh -c 'set +e;swaync-client -t;hyprshot -m window'"
+          "command": "sh -c '~/.config/shared/scripts/screenshot.sh'"
         }
       ]
     }
