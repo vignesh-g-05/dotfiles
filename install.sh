@@ -17,7 +17,7 @@ if [[ "$is_package_install" == "y" ]]; then
     eval "$update"
 
     base_tools=(git curl wget zsh stow unzip nvim cargo fastfetch bat)
-    cargo_tools=(eza ctgen)
+    cargo_tools=(eza)
 
     install_packages "${base_tools[@]}"
     install_cargo_tools "${cargo_tools[@]}"
