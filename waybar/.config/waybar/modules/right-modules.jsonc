@@ -20,7 +20,7 @@
     "network": {
         "interface": "wlp2s0",
         "interval": 10,
-        "on-click": "~/.local/bin/hyprltm-net",
+        "on-click": "~/.local/bin/orbit toggle",
         "format": "{ifname}",
         "format-wifi": "{signalStrength}% {icon}",
         "format-ethernet": "",
