@@ -35,7 +35,7 @@ inner-user-image {
 pfp {
     background-color:	white / 30%;
     border-radius:	50%;
-    background-image:	url("~/.config/hypr/images/pfp.jpg", both);
+    background-image:	url("~/.config/themes/current-theme/pfp", both);
 }
 
 listview {
@@ -54,7 +54,7 @@ element {
     border-radius:  50%;
     padding:	    32px 30px;
     border:	    5px solid;
-    border-color:   @accent-primary;
+    border-color:   @accent;
 }
 
 element-text {
@@ -71,6 +71,6 @@ element alternate.normal {
     background-color:	white / 25%;
 }
 element selected.normal {
-    background-color:   @accent-primary;
+    background-color:   @accent;
 }
 

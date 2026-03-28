@@ -57,7 +57,7 @@ tooltip {
 
 tooltip label {
   background-color: @background;
-  color: @text-primary;
+  color: @foreground;
 }
 tooltip box {
   padding: 5px;

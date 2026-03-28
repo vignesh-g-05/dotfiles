@@ -8,7 +8,7 @@
 .widget-buttons-grid button {
   padding: 10px;
   margin: 10px;
-  background: linear-gradient(-45deg, alpha(@text-primary, 0.1), alpha(@text-secondary, 0.1));
+  background: @surface;
   border-radius: 10px 0;
 }
 
@@ -17,16 +17,11 @@
 }
 
 .widget-buttons-grid button:checked {
-  background: @accent-primary;
+  background: @accent;
 }
 
 .widget-buttons-grid button:hover {
-  background: @text-secondary;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.20);
-}
-
-.widget-buttons-grid button:checked:hover {
-  background: mix(@accent-primary, @background, 0.2);
+  background: @accent-hover;
   box-shadow: 0 2px 6px rgba(0,0,0,0.20);
 }
 

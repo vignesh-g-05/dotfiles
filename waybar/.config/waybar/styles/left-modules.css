@@ -11,14 +11,14 @@
 }
 
 #custom-logo {
-  color: @accent-primary;
+  color: @accent;
 }
 #custom-clock {
-  color: @accent-secondary;
+  color: @accent-hover;
 }
 
 #clock {
-  color: @highlight;
+  color: @accent;
 }
 
 #backlight {

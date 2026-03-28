@@ -1,5 +1,5 @@
 * {
-  color: @text-primary;
+  color: @foreground;
   all: unset;
   font-size: 0.95rem;
   font-family: "JetBrains Mono Nerd Font Propo";

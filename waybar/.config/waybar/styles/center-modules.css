@@ -7,8 +7,8 @@
 
 #workspaces button {
   border-radius: 0 5px;
-  background: linear-gradient(145deg, alpha(@text-primary, 0.1), alpha(@text-secondary, 0.1));
-  color: @text-primary;
+  background: @surface;
+  color: @accent-foreground;
   min-height: 20px;
   min-width: 24px;
   padding: 0 6px;
@@ -17,12 +17,11 @@
 }
 
 #workspaces button.active {
-  background: @accent-primary;
-  color: @background;
+  background: @accent;
 }
 
 #custom-theme-switcher,
 #custom-notification {
-  color: @accent-primary;
+  color: @accent;
 }
 

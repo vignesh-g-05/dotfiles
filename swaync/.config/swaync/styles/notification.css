@@ -3,9 +3,9 @@
   padding: 14px 20px;
   border-radius: 0 10px;
   background: @background;
-  color: @text-primary;
+  color: @foreground;
 
-  border: 1px solid alpha(@text-primary, 0.4);
+  border: 1px solid alpha(@foreground, 0.4);
 }
 
 /* --- Outer wrapper --- */
@@ -20,14 +20,14 @@
   padding: 6px 12px;
   background: @background;
   border-radius: 12px;
-  color: @text-primary;
+  color: @foreground;
 }
 
 /* --- Inline reply button --- */
 .notification-row .inline-reply-button {
   padding: 6px 12px;
   border-radius: 12px;
-  background: @accent-secondary;
+  background: @accent-hover;
   color: @background;
 }
 
@@ -44,7 +44,7 @@
 .notification-content .time {
   font-size: 0.9rem;
   font-weight: 700;
-  color: @accent-primary;
+  color: @accent;
   padding: 2px 0;
 }
 
@@ -54,13 +54,13 @@
   font-weight: 800;
   padding: 2px 0;
   margin-bottom: 3px;
-  color: @text-primary;
+  color: @foreground;
 }
 
 /* --- Body text --- */
 .notification .body {
   font-size: 0.82rem;
-  color: @accent-primary;
+  color: @accent;
 }
 
 /* --- Urgency border --- */
@@ -80,7 +80,7 @@
 .notification.low progress,
 .notification.normal progress,
 .notification.critical progress {
-  background: @highlight;
+  background: @surface;
   border-radius: 6px;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .notification-background .close-button:hover {
-  background: @text-secondary;
+  background: @foreground;
   color: @background;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .notification > *:last-child > * .notification-action {
-  background: @text-secondary;
+  background: @foreground;
   border-radius: 8px;
   margin: 0 6px 10px 6px;
   padding: 4px 10px;
@@ -111,8 +111,8 @@
 
 .notification > *:last-child > * .notification-action:hover,
 .notification > *:last-child > * .notification-action:active {
-  background: @highlight;
-  color: @text-primary;
+  background: @accent-hover;
+  color: @foreground;
 }
 
 

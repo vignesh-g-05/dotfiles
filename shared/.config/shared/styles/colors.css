@@ -1,11 +1,11 @@
-@define-color background       #1a1b26;
-@define-color surface          #222436;
-@define-color text-primary     #d6d8ee;
-@define-color text-secondary   #a3accf;
-@define-color accent-primary   #b38eed;
-@define-color accent-secondary #edc6f2;
-@define-color highlight        #9aa5ce;
+@define-color background        #161821;
+@define-color surface           #24283B;
+@define-color foreground        #E6E9F2;
 
-@define-color success          #50fa7b;
-@define-color warning          #f0b775;
-@define-color error            #f7768e;
+@define-color accent            #9F63D6;
+@define-color accent-hover      #B57AF0;
+@define-color accent-foreground #FFFFFF;
+
+@define-color success           #4FD08A;
+@define-color warning           #E6A84A;
+@define-color error             #E05D6F;

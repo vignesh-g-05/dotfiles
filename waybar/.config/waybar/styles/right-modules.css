@@ -16,7 +16,7 @@
 }
 
 #network {
-  color: @highlight;
+  color: @accent;
 }
 
 #battery.charging {
@@ -24,7 +24,7 @@
 }
 
 #battery.good:not(.charging) {
-  color: @accent-secondary;
+  color: @accent-hover;
 }
 
 #battery.warning:not(.charging) {
