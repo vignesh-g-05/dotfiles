@@ -1,4 +1,4 @@
-@import "~/.config/shared/styles/colors.conf"
+@import "~/.config/themes/current-theme/colors/colors.conf"
 
 configuration {
     show-icons: true;

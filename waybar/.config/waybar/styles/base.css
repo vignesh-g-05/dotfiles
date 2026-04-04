@@ -1,4 +1,4 @@
-@import url("../../shared/styles/colors.css"); /* ~/.config/shared/styles/colors.css */
+@import url("../../themes/current-theme/colors/colors.css"); /* ~/.config/themes/current-theme/colors.css */
 @import url("./left-modules.css");
 @import url("./center-modules.css");
 @import url("./right-modules.css");
@@ -6,7 +6,7 @@
 /* --- BASE STYLES --- */
 * {
   border: none;
-  font-family: "JetBrainsMono Nerd Font Propo" ;
+  font-family: "JetBrainsMono Nerd Font Propo";
 }
 
 window#waybar {
@@ -20,7 +20,7 @@ window#waybar {
   margin-bottom: 0px;
 }
 
-#custom-logo, 
+#custom-logo,
 #custom-clock,
 #clock,
 #backlight,
@@ -36,7 +36,7 @@ window#waybar {
 }
 
 /* --- CIRCLE MODULES --- */
-#custom-logo, 
+#custom-logo,
 #custom-notification,
 #custom-theme-switcher,
 #custom-power {
@@ -48,7 +48,7 @@ window#waybar {
 }
 
 /* --- TOOLTIP --- */
-tooltip { 
+tooltip {
   background-color: @background;
   border-radius: 7px 0;
   animation: tooltipFade 0.18s ease-out;

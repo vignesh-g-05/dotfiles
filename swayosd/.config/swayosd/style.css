@@ -1,4 +1,4 @@
-@import "../shared/styles/colors.css";
+@import "../themes/current-theme/colors/colors.css";
 
 window#osd {
   border-radius: 10px 0;
@@ -24,7 +24,7 @@ window#osd label {
 }
 
 window#osd label {
-  min-width:  50px;
+  min-width: 50px;
 }
 window#osd progressbar:disabled,
 window#osd image:disabled {
@@ -42,7 +42,11 @@ window#osd trough {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-  background: linear-gradient(145deg, alpha(@text-primary, 0.1), alpha(@text-secondary, 0.1));
+  background: linear-gradient(
+    145deg,
+    alpha(@text-primary, 0.1),
+    alpha(@text-secondary, 0.1)
+  );
 }
 
 window#osd progress {
