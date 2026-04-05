@@ -1,7 +1,7 @@
 {
   "custom/theme-switcher": {
     "format": "",
-    "on-click": "~/.config/themes/theme-switcher.sh",
+    "on-click": "~/.config/themes/mode-selector.sh",
     "tooltip": false,
   },
 

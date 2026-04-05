@@ -1,0 +1,70 @@
+@import "~/.config/themes/current-theme/colors/colors.conf"
+
+* {
+    font: "JetBrainsMono Nerd Font Propo 14";
+}
+
+window {
+    background-color: @background;
+    width: 35%;
+    height: 200px;
+    padding: 0;
+    border-radius: 16px;
+}
+
+mainbox {
+    children: [ "textbox-prompt-colon", "listview" ];
+    spacing: 12px;
+    padding: 18px;
+    background-color: transparent;
+}
+
+textbox-prompt-colon {
+    str: "Appearance";
+    background-color: transparent;
+    color: @foreground;
+    font: "JetBrainsMono Nerd Font Propo 17";
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+listview {
+    columns: 2;
+    spacing: 12px;
+    padding: 4px;
+    scrollbar: false;
+    background-color: transparent;
+}
+
+element {
+    padding: 14px;
+    border-radius: 14px;
+    background-color: @surface;
+}
+
+element-text {
+    font: "JetBrainsMono Nerd Font Propo 15";
+    horizontal-align: 0.5;
+    color: @foreground;
+    background-color: transparent;
+}
+
+element normal.normal {
+    background-color: @surface;
+}
+
+element normal.active {
+    background-color: @surface;
+}
+
+element alternate.normal {
+    background-color: @surface;
+}
+
+element selected.normal {
+    background-color: @accent;
+}
+
+element-text selected.normal {
+    color: @accent-foreground;
+}
