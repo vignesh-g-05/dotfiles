@@ -1,32 +1,36 @@
 #!/usr/bin/env bash
 
-options="Purple|Graphite Dark"
-theme_link="$HOME/.config/themes/current-theme"
-themes_dir="$HOME/.config/themes"
+cd ~/.config/themes || exit
 
+dirs=()
 
-refresh_system() {
-    waypaper --restore
-    pkill waybar; waybar &
-    swaync-client -R && swaync-client -rs
-}
+for d in */; do
+  [[ "$d" == "current-theme/" || "$d" == "utils/" ]] && continue
+  dirs+=("${d%/}")
+done
 
-response=$(printf '%s\n' "$options" | rofi -sep '|' -dmenu \
-    -theme '~/.config/rofi/themes/theme-switcher.rasi')
+options=$(IFS='|'; echo "${dirs[*]}")
+
+response=$(printf "%s\n" "$options" | rofi -sep '|' -dmenu \
+  -theme ~/.config/rofi/themes/theme-switcher.rasi)
 
 [ -z "$response" ] && exit 0
+
+theme_dir="$HOME/.config/themes/${response}"
+theme_link="$HOME/.config/themes/current-theme"
 
 mkdir -p "$(dirname "$theme_link")"
 rm -f "$theme_link"
 
-case "$response" in
-    "Purple")
-        ln -s "$themes_dir/purple/variants/raiden-shogun" "$theme_link"
-        refresh_system
-        ;;
-    "Graphite Dark")
-        ln -s "$themes_dir/graphite-dark/variants/firefly" "$theme_link"
-        refresh_system
-        ;;
-esac
+variant_dir=$(find "$theme_dir/variants" -mindepth 1 -maxdepth 1 -type d | head -n 1)
+[ -z "$variant_dir" ] && exit 1
 
+ln -s "$variant_dir" "$theme_link" || exit 1
+
+wallpaper="$theme_link/wallpaper"
+[ -f "$wallpaper" ] && swww img "$wallpaper" --transition-type center
+
+pkill waybar
+waybar &
+
+swaync-client -R && swaync-client -rs
