@@ -6,10 +6,10 @@ configuration {
 
 window {
     background-color:	black / 20%;
-    fullscreen:		true;
-    padding:		0px;
-    margin:		0px;
-    padding:		0px;
+    fullscreen:		    true;
+    padding:		    0px;
+    margin:		        0px;
+    padding:		    0px;
 }
 
 mainbox {
