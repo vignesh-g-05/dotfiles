@@ -1,0 +1,86 @@
+@import "~/.config/themes/current-theme/colors/colors.conf"
+
+* {
+    font: "JetBrainsMono Nerd Font Propo 12";
+}
+
+window {
+    background-color: @background;
+    width: 40%;
+    height: 480px;
+    border-radius: 18px;
+}
+
+mainbox {
+    children: ["inputbar", "listview"];
+    spacing: 20px;
+    padding: 24px;
+    background-color: transparent;
+}
+
+inputbar {
+    children:	["textbox-prompt-colon","entry"];
+    background-color: transparent;
+    spacing:	20px;
+}
+
+placeholder {
+     background-color: transparent;
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "";
+    padding:                     10px 13px;
+    border-radius:               100%;
+    background-color:            @surface;
+    text-color:                  @accent;
+}
+
+entry {
+    placeholder: "Search variant";
+    padding: 10px 14px;
+    border-radius: 12px;
+    background-color: @surface;
+    color: @foreground;
+}
+
+listview {
+    columns: 4;
+    spacing: 20px;
+    scrollbar: false;
+    background-color: transparent;
+}
+
+element {
+    orientation: vertical;
+    spacing: 8px;
+    padding: 12px;
+    border-radius: 14px;
+    background-color: transparent;
+}
+
+element normal.normal {
+    background-color: transparent;
+}
+
+element selected.normal {
+    background-color: @surface;
+}
+
+element-icon {
+    size: 200px;
+    border-radius: 14px;
+    background-color: transparent;
+}
+
+element-text {
+    color: @foreground;
+     background-color: transparent;
+    horizontal-align: 0.5;
+}
+
+element-text selected.normal {
+    color: @accent;
+}

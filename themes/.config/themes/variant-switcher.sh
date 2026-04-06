@@ -8,18 +8,25 @@ current_variant=$(basename "$target")
 current_theme=$(basename "$(dirname "$(dirname "$target")")")
 
 current_variant_dir=$(dirname "$target")
+
 cd "$current_variant_dir" || exit
 
-dirs=()
+images=()
 
-for d in */; do
-    [[ "$d" == "default-variant/" ]] && continue
-    dirs+=("${d%/}")
-done
-
-response=$(printf "%s\n" "${dirs[@]}" | rofi -dmenu \
--theme ~/.config/rofi/themes/theme-switcher.rasi)
-
+response=$(
+    for d in */; do
+        [[ "$d" == "default-variant/" ]] && continue
+        
+        name="${d%/}"
+        wallpaper="$current_variant_dir/$d/fastfetch"
+        wallpaper_real_path=$(realpath "$wallpaper" 2>/dev/null)
+        
+        [ ! -f "$wallpaper_real_path" ] && continue
+        
+        printf "%s\0icon\x1fthumbnail://%s\n" "$name" "$wallpaper_real_path"
+    done | rofi -dmenu -show-icons \
+    -theme ~/.config/rofi/themes/variant-switcher.rasi
+)
 [[ -z "$response" || "$response" == "$current_variant" ]] && exit 0
 
 theme_dir="$HOME/.config/themes/${current_theme}"
