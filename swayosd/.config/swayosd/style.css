@@ -2,7 +2,7 @@
 
 window#osd {
   border-radius: 10px 0;
-  border: 2px solid @accent-primary;
+  border: 2px solid @accent;
   background: @background;
   font-family: "Space Grotesk, JetBrains Mono Nerd Font Propo";
   font-size: 16px;
@@ -20,7 +20,7 @@ window#osd image {
 
 window#osd image,
 window#osd label {
-  color: @accent-primary;
+  color: @accent;
 }
 
 window#osd label {
@@ -44,8 +44,8 @@ window#osd trough {
   border: none;
   background: linear-gradient(
     145deg,
-    alpha(@text-primary, 0.1),
-    alpha(@text-secondary, 0.1)
+    alpha(@accent-foreground, 0.3),
+    alpha(@accent-foreground, 0.2)
   );
 }
 
@@ -53,5 +53,5 @@ window#osd progress {
   min-height: inherit;
   border-radius: inherit;
   border: none;
-  background: @accent-primary;
+  background: @accent;
 }

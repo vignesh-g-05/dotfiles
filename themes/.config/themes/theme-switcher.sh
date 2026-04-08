@@ -40,5 +40,6 @@ wallpaper="$theme_link/wallpaper"
 
 pkill waybar
 waybar &
-
 swaync-client -R && swaync-client -rs
+pkill swayosd-server && swayosd-server &
+hyprctl reload
