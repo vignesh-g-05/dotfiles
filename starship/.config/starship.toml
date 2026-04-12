@@ -1,7 +1,7 @@
 # version: 1.0.0
 
 add_newline = true
-continuation_prompt = "[▸▹ ](dimmed white)"
+continuation_prompt = "[ ▸ ](dimmed)"
 
 format = """($nix_shell$container$fill$git_metrics\n)\
 $hostname\
@@ -93,9 +93,9 @@ symbol = ' '
 
 [character]
 format = "$symbol "
-success_symbol = "[ 󰭟 ](bold italic #BD93F9)"
-error_symbol = "[ 󰭟 ](italic #FF79C6)"
-vimcmd_symbol = "[ 󱇪 ](italic #8BE9FD)"
+success_symbol = "[ ❯ ](bold italic)"
+error_symbol = "[ ❯ ](italic red)"
+vimcmd_symbol = "[  ](italic cyan)"
 # not supported in zsh
 vimcmd_replace_one_symbol = "◌"
 vimcmd_replace_symbol = "□"
@@ -107,8 +107,8 @@ style = 'green italic'
 
 [sudo]
 format = "[$symbol]($style)"
-style = "bold italic bright-purple"
-symbol = "󰳭 "
+style = "bold italic yellow"
+symbol = " "
 disabled = false
 
 [username]
@@ -119,23 +119,23 @@ disabled = false
 show_always = false
 
 [directory]
-home_symbol = " "
+home_symbol = "󱂵 "
 truncation_length = 2
-truncation_symbol = " 󰊠  "
-read_only = " "
+truncation_symbol = "…/"
+read_only = "  "
 use_os_path_sep = true
 style = "italic blue"
 format = '[$path]($style)[$read_only]($read_only_style)'
 repo_root_style = 'bold blue'
-repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) [△](bold bright-blue)'
+repo_root_format = '[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style)'
 
 [cmd_duration]
 format = "[󰥔  $duration ](italic #8BE9FD)"
 
 [jobs]
-format = "[$symbol$number]($style) "
+format = "[$number $symbol]($style) "
 style = "white"
-symbol = "[󱟓 ](#8BE9FD italic)"
+symbol = "[ ](italic)"
 
 [localip]
 ssh_only = true
@@ -171,20 +171,15 @@ threshold = 70
 style = "italic dimmed yellow"
 
 [git_branch]
-format = " [$branch(:$remote_branch)]($style)"
-symbol = "[△](bold italic bright-blue)"
-style = "italic bright-blue"
-truncation_symbol = "⋯"
-truncation_length = 11
-ignore_branches = ["main", "master"]
-only_attached = true
+format = " [󰘬 $branch]($style)"
+style = "blue dimmed"
+truncation_length = 20
+truncation_symbol = "…"
 
 [git_metrics]
-format = '([▴$added]($added_style))([▿$deleted]($deleted_style))'
-added_style = 'italic dimmed green'
-deleted_style = 'italic dimmed red'
-ignore_submodules = true
-disabled = false
+format = '[$added]($added_style) [$deleted]($deleted_style) '
+added_style = 'dimmed green'
+deleted_style = 'dimmed red'
 
 [git_status]
 style = "bold italic bright-blue"
@@ -199,6 +194,7 @@ modified = "[●◦](italic yellow)"
 staged = "[▪┤[$count](bold white)│](italic bright-cyan)"
 renamed = "[◎◦](italic bright-blue)"
 deleted = "[✕](italic red)"
+disabled = true
 
 [deno]
 format = " [deno](italic) [∫ $version](green bold)"
@@ -211,17 +207,14 @@ symbol = "󰢱 "
 style = "bold bright-yellow"
 
 [nodejs]
-format = " [node](italic) [󰎙 ($version)](bold bright-green)"
+format = " [󰎙 $version]($style)"
+style = "green"
 version_format = "${raw}"
-detect_files = ["package-lock.json", "yarn.lock"]
-detect_folders = ["node_modules"]
-detect_extensions = []
 
 [python]
-format = " [py](italic) [${symbol}${version}]($style)"
-symbol = "[](bold bright-blue)⌊ "
+format = " [ $version]($style)"
+style = "yellow"
 version_format = "${raw}"
-style = "bold bright-yellow"
 
 [ruby]
 format = " [rb](italic) [${symbol}${version}]($style)"

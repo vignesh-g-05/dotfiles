@@ -3,8 +3,8 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
 # Download Zinit, if it's not there yet
 if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+    mkdir -p "$(dirname $ZINIT_HOME)"
+    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 # Source/Load zinit
@@ -28,7 +28,6 @@ eval "$(starship init zsh)"
 
 # Plugins
 zinit light zsh-users/zsh-completions
-source ~/.config/zsh/zsh-syntax-highlighting.zsh
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 
@@ -36,7 +35,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 autoload -Uz compinit && compinit -C
 
 # Keybindings
-bindkey -v
 bindkey '^y' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -74,13 +72,18 @@ alias src='source ~/.zshrc'
 
 # Startup commands
 if [[ $- == *i* ]]; then
-  fastfetch
+    fastfetch
 fi
 
 
 # Compile zsh files for faster load
 autoload -Uz zrecompile
 if [[ ! -f ~/.zshrc.zwc || ~/.zshrc -nt ~/.zshrc.zwc ]]; then
-  zrecompile -pq ~/.zshrc
+    zrecompile -pq ~/.zshrc
 fi
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add new line between prompt and output
+preexec() {
+    print ""
+}
