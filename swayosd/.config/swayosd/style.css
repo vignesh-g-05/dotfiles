@@ -1,4 +1,4 @@
-@import "../themes/current-theme/colors/colors.css";
+@import "../themes/build/css/colors.css";
 
 window#osd {
   border-radius: 10px 0;

@@ -1,4 +1,4 @@
-@import "~/.config/themes/current-theme/colors/colors.conf"
+@import "~/.config/themes/build/rofi/colors.conf"
 
 window {
     font:		          "JetBrainsMono Nerd Font Propo 12";

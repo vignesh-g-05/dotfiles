@@ -10,7 +10,7 @@
     "separator": "",
   },
   "logo": {
-    "source": "~/.config/themes/current-theme/fastfetch",
+    "source": "~/.config/themes/current-theme/assets/fastfetch.png",
     "type": "kitty-direct",
     "width": 35,
   },
