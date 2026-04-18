@@ -13,13 +13,11 @@ fi
 get_current_theme() {
     [[ ! -h "$CURRENT_THEME_LINK" ]] && return 1
     local current_variant=$(readlink "$CURRENT_THEME_LINK")
-    basename $(dirname $(dirname "$current_variant"))
+    basename "$(dirname "$(dirname "$current_variant")")"
 }
 
 get_all_themes() {
-    for dir in "$THEME_SOURCES_DIR"/*/; do
-        basename "$dir"
-    done
+    find "$THEME_SOURCES_DIR" -mindepth 1 -maxdepth 1 -type d -printf "%f\n" | sort
 }
 
 get_default_variant() {
@@ -36,8 +34,8 @@ open_rofi() {
 }
 
 reload_apps() {
-    pkill waybar
-    waybar &
+    pkill waybar || true
+    waybar & disown
     swaync-client -R && swaync-client -rs
     pkill swayosd-server && swayosd-server &
     hyprctl reload
@@ -52,7 +50,7 @@ reload_apps() {
     --transition-step 90
 }
 
-build_theme() {
+apply_theme() {
     local new_theme="$1"
     link_current_theme "$new_theme"
     local colors_file="$THEME_SOURCES_DIR/$new_theme/colors.toml"
@@ -67,7 +65,6 @@ build_theme() {
 }
 
 build_hyprlock_variables() {
-    set -x
     local new_theme="$1"
     local default_variant="$(get_default_variant "$new_theme")"
     local variant_dir="$THEME_SOURCES_DIR/$new_theme/variants/$default_variant"
@@ -80,19 +77,17 @@ build_hyprlock_variables() {
     
     if [ -z "$hyprlock_bg" ]; then
         echo "No wallpaper found in $variant_dir/assets"
-        return 1
+        return 11
     fi
     
     echo "\$bg_img=$hyprlock_bg" > "$hyprlock_conf"
-    set +x
 }
 
 link_current_theme() {
     local new_theme="$1"
     local default_variant="$(get_default_variant "$new_theme")"
     local variant_dir="$THEME_SOURCES_DIR/$new_theme/variants/$default_variant"
-    [[ -h "$CURRENT_THEME_LINK" ]] && rm "$CURRENT_THEME_LINK"
-    ln -s "$variant_dir" "$CURRENT_THEME_LINK"
+    ln -sfn "$variant_dir" "$CURRENT_THEME_LINK"
     setup_kitty_theme "$new_theme"
 }
 
@@ -113,7 +108,7 @@ main() {
     [[ -z "$selected_theme" ]] && exit 0
     current_theme="$(get_current_theme)"
     [[ "$selected_theme" == "$current_theme" ]] && exit 0
-    build_theme "$selected_theme"
+    apply_theme "$selected_theme"
     reload_apps
 }
 
