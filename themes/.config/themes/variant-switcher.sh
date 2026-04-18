@@ -1,46 +1,54 @@
 #!/usr/bin/env bash
 
-cd ~/.config/themes || exit
+readonly THEMES_DIR="$HOME/.config/themes"
+readonly CURRENT_THEME_LINK="$THEMES_DIR/current-theme"
+readonly ROFI_THEME="$HOME/.config/rofi/themes/variant-switcher.rasi"
 
-target=$(realpath "$HOME/.config/themes/current-theme")
+target=$(realpath "$CURRENT_THEME_LINK") || exit 1
 
-current_variant=$(basename "$target")
-current_theme=$(basename "$(dirname "$(dirname "$target")")")
+current_theme="$(basename "$(dirname "$(dirname "$target")")")"
+current_variant="$(basename "$target")"
+current_theme_variants_dir="$(dirname "$target")"
 
-current_variant_dir=$(dirname "$target")
-
-cd "$current_variant_dir" || exit
-
-images=()
+build_hyprlock_variables() {
+    set -x
+    local new_variant="$1"
+    local hyprlock_conf="$THEMES_DIR/build/hypr/hyprlock.conf"
+    local hyprlock_bg=$(find "$current_theme_variants_dir/$new_variant/assets" -maxdepth 1 -type f -name "lockscreen.*" | head -n 1)
+    
+    if [ -z "$hyprlock_bg" ]; then
+        echo "No wallpaper found in $variant_dir/assets"
+        return 11
+    fi
+    
+    echo "\$bg_img=$hyprlock_bg" > "$hyprlock_conf"
+}
 
 response=$(
-    for d in */; do
-        [[ "$d" == "default-variant/" ]] && continue
-        
+    for d in "$current_theme_variants_dir"/*/; do
         name="${d%/}"
-        wallpaper="$current_variant_dir/$d/fastfetch"
-        wallpaper_real_path=$(realpath "$wallpaper" 2>/dev/null)
         
-        [ ! -f "$wallpaper_real_path" ] && continue
+        preview="$name/assets/fastfetch.png"
+        [ -f "$preview" ] || continue
+        name="${name##*/}"
         
-        printf "%s\0icon\x1fthumbnail://%s\n" "$name" "$wallpaper_real_path"
-    done | rofi -dmenu -show-icons \
-    -theme ~/.config/rofi/themes/variant-switcher.rasi
+        printf "%s\0icon\x1fthumbnail://%s\n" "$name" "$preview"
+    done | rofi -dmenu -show-icons -theme "$ROFI_THEME"
 )
+
 [[ -z "$response" || "$response" == "$current_variant" ]] && exit 0
 
-theme_dir="$HOME/.config/themes/${current_theme}"
-theme_link="$HOME/.config/themes/current-theme"
-selected_variant_dir="$theme_dir/variants/$response"
+selected_variant_dir="$THEMES_DIR/sources/$current_theme/variants/$response"
+[ -d "$selected_variant_dir" ] || exit 1
 
-[ ! -d "$selected_variant_dir" ] && exit 1
+# atomic switch
+ln -sfn "$selected_variant_dir" "$CURRENT_THEME_LINK"
 
-mkdir -p "$(dirname "$theme_link")"
-rm -f "$theme_link"
+# wallpaper
+wallpaper=$(find "$CURRENT_THEME_LINK/assets" -maxdepth 1 -type f -name "wallpaper.*" | head -n 1)
 
-ln -s "$selected_variant_dir" "$theme_link" || exit 1
+build_hyprlock_variables "$response"
 
-wallpaper="$theme_link/wallpaper"
 [ -f "$wallpaper" ] && swww img "$wallpaper" \
 --transition-type wipe \
 --transition-angle 45 \
