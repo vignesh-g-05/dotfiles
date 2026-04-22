@@ -37,6 +37,14 @@ run_command() {
     fi
 }
 
+run_shell() {
+    if [[ "$VERBOSE" == true ]]; then
+        bash -c "$1" 2>&1 | tee -a "$LOG_FILE"
+    else
+        bash -c "$1" >> "$LOG_FILE" 2>&1
+    fi
+}
+
 loading_spinner() {
     local msg="$1"
     while :; do

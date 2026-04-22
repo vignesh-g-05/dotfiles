@@ -35,7 +35,7 @@ install_curl_package() {
         log_loading "installing $package"
     fi
     
-    if run_command "bash -c \"$cmd\""; then
+    if run_shell "bash -c \"$cmd\""; then
         log_success "$package installed"
         INSTALLED_PACKAGES+=("$package")
         return 0
