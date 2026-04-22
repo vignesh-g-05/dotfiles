@@ -50,6 +50,8 @@ main(){
         exit 1
     fi
     
+    enable_dnf_copr_repos
+    
     if $INSTALL_PACKAGES; then
         install_dependencies
     fi

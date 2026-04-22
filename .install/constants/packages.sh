@@ -37,6 +37,7 @@ STOW_PACKAGES=(
     rofi
     starship
     swaync
+    themes
     vscode
     waybar
     waypaper

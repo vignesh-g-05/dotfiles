@@ -14,7 +14,7 @@ enable_dnf_copr_repos() {
     
     for repo in "${repos[@]}"; do
         
-        if dnf copr list --enabled | grep -q "$repo"; then
+        if dnf copr list | grep -q "^$repo"; then
             log_info "COPR '$repo' already enabled. Skipping."
             continue
         fi
