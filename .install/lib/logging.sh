@@ -13,16 +13,16 @@ printf '%s\n\n' "----------------------------------------" >> "$LOG_FILE"
 
 
 frames=(
-  "◜" "◠" "◝" "◞" "◡" "◟"
+    "◜" "◠" "◝" "◞" "◡" "◟"
 )
 
 _write_log() {
-  local level="$1"
-  local message="$2"
-
-  [[ "$LOG_ENABLED" == true ]] || return
-
-  printf "[%s] [%s] %s\n" \
+    local level="$1"
+    local message="$2"
+    
+    [[ "$LOG_ENABLED" == true ]] || return
+    
+    printf "[%s] [%s] %s\n" \
     "$(date +'%Y-%m-%d %H:%M:%S')" \
     "$level" \
     "$message" >> "$LOG_FILE"
@@ -30,70 +30,70 @@ _write_log() {
 
 
 run_command() {
-  if [[ "$VERBOSE" == true ]]; then
-    "$@" 2>&1 | tee -a "$LOG_FILE"
-  else
-    "$@" >> "$LOG_FILE" 2>&1
-  fi
+    if [[ "$VERBOSE" == true ]]; then
+        "$@" 2>&1 | tee -a "$LOG_FILE"
+    else
+        "$@" >> "$LOG_FILE" 2>&1
+    fi
 }
 
 loading_spinner() {
-  local msg="$1"
-  while :; do
-    for char in "${frames[@]}"; do
-      printf "\r${CYAN}%s${RESET}  › ${BOLD}%s${RESET}" "$char" "$msg"
-      sleep 0.08
+    local msg="$1"
+    while :; do
+        for char in "${frames[@]}"; do
+            printf "\r${CYAN}%s${RESET}  › ${BOLD}%s${RESET}" "$char" "$msg"
+            sleep 0.08
+        done
     done
-  done
 }
 
 stop_loading() {
-  [ -n "$LOADING_PID" ] || return
-  kill "$LOADING_PID" 2>/dev/null
-  wait "$LOADING_PID" 2>/dev/null
-  LOADING_PID=
-  printf "\r\033[K"
-  tput cnorm 2>/dev/null
+    [ -n "$LOADING_PID" ] || return
+    kill "$LOADING_PID" 2>/dev/null
+    wait "$LOADING_PID" 2>/dev/null
+    LOADING_PID=
+    printf "\r\033[K"
+    tput cnorm 2>/dev/null
 }
 
 log_loading() {
-  stop_loading
-  tput civis 2>/dev/null
-  loading_spinner "$1" &
-  LOADING_PID=$!
+    stop_loading
+    tput civis 2>/dev/null
+    loading_spinner "$1" &
+    LOADING_PID=$!
 }
 
 log_prompt() {
-  printf "${BOLD} [?] › %s" "$1"
+    printf "${BOLD} [?] › %s" "$1"
 }
 
 log_info() {
-  stop_loading
-  printf "${BLUE}${BOLD} [i] › %s${RESET}\n" "$1"
-  _write_log "INFO" "$1"
+    stop_loading
+    printf "${BLUE}${BOLD} [i] › %s${RESET}\n" "$1"
+    _write_log "INFO" "$1"
 }
 
 log_warn() {
-  stop_loading
-  printf "${YELLOW}${BOLD} [⚠] › %s${RESET}\n" "$1"
-  _write_log "WARN" "$1"
+    stop_loading
+    printf "${YELLOW}${BOLD} [⚠] › %s${RESET}\n" "$1"
+    _write_log "WARN" "$1"
 }
 
 log_error() {
-  stop_loading
-  printf "${RED}${BOLD} [x] › %s${RESET}\n" "$1"
-  _write_log "ERROR" "$1"
+    stop_loading
+    printf "${RED}${BOLD} [x] › %s${RESET}\n" "$1"
+    _write_log "ERROR" "$1"
 }
 
 log_success() {
-  stop_loading
-  printf "${GREEN}${BOLD} [✔] › %s${RESET}\n" "$1"
-  _write_log "SUCCESS" "$1"
+    stop_loading
+    printf "${GREEN}${BOLD} [✔] › %s${RESET}\n" "$1"
+    _write_log "SUCCESS" "$1"
 }
 
 cleanup() {
-  stop_loading
-  tput cnorm 2>/dev/null
+    stop_loading
+    tput cnorm 2>/dev/null
 }
 
 log_info "Installation started."

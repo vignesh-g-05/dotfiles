@@ -3,7 +3,6 @@ CORE_PACKAGES=(
     curl
     unzip
     cargo
-    unnecessary-package
 )
 
 OPTIONAL_PACKAGES=(
@@ -22,36 +21,35 @@ CARGO_PACKAGES=(
 )
 
 declare -A CURL_PACKAGES_MAP=(
-[atuin]="curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh"
-[nvm]="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash"
-[starship]="curl -sS https://starship.rs/install.sh | sh"
+    [atuin]="curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh"
+    [nvm]="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash"
+    [starship]="curl -sS https://starship.rs/install.sh | sh"
 )
 
 STOW_PACKAGES=(
-  atuin
-  fastfetch
-  flameshot
-  git
-  gtk
-  hyprland
-  kitty
-  nvim
-  rofi
-  starship
-  swaync
-  vscode
-  waybar
-  waypaper
-  zsh
+    atuin
+    fastfetch
+    flameshot
+    git
+    hyprland
+    kitty
+    nvim
+    rofi
+    starship
+    swaync
+    vscode
+    waybar
+    waypaper
+    zsh
 )
 
 HYPRLAND_PACKAGES=(
-  hyprland
-  hyprlock
-  hypridle
-  rofi
-  swaync
-  swayosd
-  waybar
-  waypaper
+    hyprland
+    hyprlock
+    hypridle
+    rofi
+    swaync
+    swayosd
+    waybar
+    waypaper
 )
