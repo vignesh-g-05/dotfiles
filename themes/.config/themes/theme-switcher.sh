@@ -192,18 +192,23 @@ setup_kitty_theme() {
         return 1
     }
 }
-
 main() {
-    local selected_theme current_theme
-    local theme_arg="$1"
+    local selected_theme=""
+    local current_theme=""
+    local provided_theme="$1"
+    local should_reload=true
     
-    if [[ -n "$theme_arg" ]]; then
-        if ! get_all_themes | grep -qx "$theme_arg"; then
-            echo "invalid theme provided: $theme_arg"
+    # If theme is provided → non-interactive mode
+    if [[ -n "$provided_theme" ]]; then
+        if ! get_all_themes | grep -qx "$provided_theme"; then
+            echo "invalid theme provided: $provided_theme"
             return 1
         fi
-        selected_theme="$theme_arg"
+        
+        selected_theme="$provided_theme"
+        should_reload=false
     else
+        # Interactive selection
         if command -v rofi >/dev/null && [[ -n "$DISPLAY" || -n "$WAYLAND_DISPLAY" ]]; then
             selected_theme=$(get_all_themes | rofi -dmenu -theme "$ROFI_THEME") || return 1
         else
@@ -221,12 +226,14 @@ main() {
         return 0
     fi
     
-    apply_theme "$selected_theme" || {
+    if ! apply_theme "$selected_theme"; then
         echo "failed to apply theme: $selected_theme"
         return 1
-    }
+    fi
     
-    reload_apps
+    if $should_reload; then
+        reload_apps
+    fi
 }
 
 main "$@"
