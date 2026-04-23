@@ -4,7 +4,11 @@ enable_dnf_copr_repos() {
         return 0
     fi
     
-    log_info "Ensuring required COPR repositories are enabled..."
+    if $VERBOSE; then
+        log_info "Ensuring required COPR repositories are enabled..."
+    else
+        log_loading "Ensuring required COPR repositories are enabled..."
+    fi
     
     local repos=(
         "solopasha/hyprland"

@@ -26,7 +26,6 @@ source "$INSTALL_ROOT/installers/install_package.sh"
 source "$INSTALL_ROOT/installers/install_package_group.sh"
 source "$INSTALL_ROOT/installers/install_cargo_packages.sh"
 source "$INSTALL_ROOT/installers/install_curl_packages.sh"
-source "$INSTALL_ROOT/installers/install_orbit.sh"
 source "$INSTALL_ROOT/installers/stow_configs.sh"
 source "$INSTALL_ROOT/installers/setup_hyprland.sh"
 
