@@ -192,16 +192,34 @@ setup_kitty_theme() {
 
 main() {
     local selected_theme current_theme
+    local theme_arg="$1"
     
-    selected_theme=$(get_all_themes | rofi -dmenu -theme "$ROFI_THEME") || return 1
+    if [[ -n "$theme_arg" ]]; then
+        if ! get_all_themes | grep -qx "$theme_arg"; then
+            echo "invalid theme provided: $theme_arg"
+            return 1
+        fi
+        selected_theme="$theme_arg"
+    else
+        if command -v rofi >/dev/null && [[ -n "$DISPLAY" || -n "$WAYLAND_DISPLAY" ]]; then
+            selected_theme=$(get_all_themes | rofi -dmenu -theme "$ROFI_THEME") || return 1
+        else
+            echo "No theme provided and rofi unavailable"
+            return 1
+        fi
+    fi
+    
     [[ -n "$selected_theme" ]] || return 0
     
-    current_theme=$(get_current_theme) || current_theme=""
+    current_theme=$(get_current_theme 2>/dev/null) || current_theme=""
     
-    [[ "$selected_theme" == "$current_theme" ]] && return 0
+    if [[ "$selected_theme" == "$current_theme" ]]; then
+        echo "Theme already set: $selected_theme"
+        return 0
+    fi
     
     apply_theme "$selected_theme" || {
-        echo "failed to apply theme: $selected_theme" >&2
+        echo "failed to apply theme: $selected_theme"
         return 1
     }
     

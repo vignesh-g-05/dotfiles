@@ -50,14 +50,14 @@ main(){
         exit 1
     fi
     
+    if $STOW_DOTFILES; then
+        stow_configs
+    fi
+    
     enable_dnf_copr_repos
     
     if $INSTALL_PACKAGES; then
         install_dependencies
-    fi
-    
-    if $STOW_DOTFILES; then
-        stow_configs
     fi
     
     if $SETUP_HYPRLAND; then
@@ -67,6 +67,22 @@ main(){
     
     if [[ "$INSTALL_PACKAGES" == true || "$SETUP_HYPRLAND" == true ]]; then
         show_install_summary
+    fi
+    
+    theme_switcher="$HOME/.config/themes/theme-switcher.sh"
+    
+    if [[ -f "$theme_switcher" ]]; then
+        if [[ ! -x "$theme_switcher" ]]; then
+            log_info "making theme-switcher executable"
+            chmod +x "$theme_switcher"
+        fi
+        
+        local theme="${THEME:-graphite-dark}"
+        
+        if ! "$theme_switcher" "$theme"; then
+            log_error "failed to apply theme: $theme"
+            return 1
+        fi
     fi
     
     exit 0
