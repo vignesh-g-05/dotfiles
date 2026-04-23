@@ -10,6 +10,7 @@ enable_dnf_copr_repos() {
         "solopasha/hyprland"
         "erikreider/SwayNotificationCenter"
         "erikreider/swayosd"
+        "atim/starship"
     )
     
     for repo in "${repos[@]}"; do

@@ -8,6 +8,7 @@ CORE_PACKAGES=(
 OPTIONAL_PACKAGES=(
     fastfetch
     bat
+    starship
 )
 
 WORKSPACE_PACKAGES=(
@@ -20,9 +21,8 @@ CARGO_PACKAGES=(
 )
 
 declare -A CURL_PACKAGES_MAP=(
-    [atuin]="curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh"
+    [atuin]="curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh -s -- --non-interactive"
     [nvm]="curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash"
-    [starship]="curl -sS https://starship.rs/install.sh | sh -s -- -y"
 )
 
 STOW_PACKAGES=(
