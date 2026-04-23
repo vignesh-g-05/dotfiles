@@ -4,11 +4,8 @@ enable_dnf_copr_repos() {
         return 0
     fi
     
-    if $VERBOSE; then
-        log_info "Ensuring required COPR repositories are enabled..."
-    else
-        log_loading "Ensuring required COPR repositories are enabled..."
-    fi
+    log_info "Ensuring required COPR repositories are enabled..."
+    
     
     local repos=(
         "solopasha/hyprland"
@@ -19,7 +16,7 @@ enable_dnf_copr_repos() {
     
     for repo in "${repos[@]}"; do
         
-        if dnf copr list | grep -q "^$repo"; then
+        if dnf copr list | grep -q "$repo"; then
             log_info "COPR '$repo' already enabled. Skipping."
             continue
         fi
@@ -29,6 +26,7 @@ enable_dnf_copr_repos() {
             continue
         fi
         
+        log_info "enabling copr $repo"
         run_command sudo dnf -y copr enable "$repo"
         
     done
