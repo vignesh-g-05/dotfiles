@@ -44,6 +44,9 @@ get_default_variant() {
 }
 
 reload_apps() {
+    pkill waybar
+    waybar &
+    
     swaync-client -R && swaync-client -rs
     
     pkill -x swayosd-server 2>/dev/null && swayosd-server &

@@ -6,4 +6,5 @@ setup_hyprland() {
     fi
     
     install_package_group "HYPRLAND SETUP" HYPRLAND_PACKAGES
+    install_orbit
 }
