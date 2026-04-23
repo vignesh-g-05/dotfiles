@@ -16,9 +16,12 @@ export VISUAL="nvim"
 export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin/dotfiles:$PATH"
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 [ -f "$HOME/.atuin/bin/env" ] && . "$HOME/.atuin/bin/env"
+
 
 
 # Init programs

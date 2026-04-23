@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+PID_FILE="/tmp/wf-recorder.pid"
+
+mkdir -p "$HOME/Videos/screen-recordings"
+
+if [[ -f "$PID_FILE" ]]; then
+    kill "$(cat "$PID_FILE")" && rm -f "$PID_FILE"
+    notify-send "Recording stopped"
+else
+    wf-recorder -f "$HOME/Videos/screen-recordings/recording-$(date +%F-%T).mp4" &
+    echo $! > "$PID_FILE"
+fi

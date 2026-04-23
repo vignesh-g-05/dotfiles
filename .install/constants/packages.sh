@@ -3,6 +3,8 @@ CORE_PACKAGES=(
     curl
     unzip
     cargo
+    flameshot
+    wf-recorder
 )
 
 OPTIONAL_PACKAGES=(
@@ -41,6 +43,7 @@ STOW_PACKAGES=(
     waybar
     waypaper
     zsh
+    locals
 )
 
 HYPRLAND_PACKAGES=(
