@@ -1,0 +1,12 @@
+[colors]
+background        = "#282A36"
+surface           = "#44475A"
+foreground        = "#F8F8F2"
+
+accent            = "#BD93F9"
+accent_hover      = "#A679F7"
+accent_foreground = "#F8F8F2"
+
+success           = "#50FA7B"
+warning           = "#FFB86C"
+error             = "#FF5555"
