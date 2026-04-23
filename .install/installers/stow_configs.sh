@@ -28,8 +28,7 @@ stow_config () {
 stow_configs () {
     
     if ! command -v stow >/dev/null 2>&1; then
-        log_error "GNU stow is not installed"
-        return 1
+        install_package "stow"
     fi
     
     if $VERBOSE; then

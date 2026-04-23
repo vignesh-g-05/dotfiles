@@ -11,7 +11,6 @@ OPTIONAL_PACKAGES=(
 )
 
 WORKSPACE_PACKAGES=(
-    stow
     zsh
     neovim
 )
