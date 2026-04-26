@@ -2,9 +2,8 @@
 <br />
 
 <div align="center">
-  <img src="./favicon.png" alt="Logo" width="80" height="80">
 
-  <h3 align="center">Cohesive Dots</h3>
+  <h3 align="center">Cohesive</h3>
 
   <p align="center">
     A clean, fast, and cohesive Hyprland setup focused on visual consistency and smooth workflow.
@@ -24,7 +23,7 @@
 
 > Full showcase of themes, workflow, and UI components
 
-![Demo](./assets/demo.mp4)
+<video src="./assets/demo.mp4"><video>
 
 ---
 
