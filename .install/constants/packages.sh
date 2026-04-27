@@ -4,7 +4,6 @@ CORE_PACKAGES=(
     unzip
     cargo
     flameshot
-    wf-recorder
 )
 
 OPTIONAL_PACKAGES=(
