@@ -32,7 +32,7 @@ response=$(
         [ -f "$preview" ] || continue
         name="${name##*/}"
         
-        printf "%s\0icon\x1fthumbnail://%s\n" "$name" "$preview"
+        printf "%s\0icon\x1f%s\n" "$name" "$preview"
     done | rofi -dmenu -show-icons -theme "$ROFI_THEME"
 )
 
