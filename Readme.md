@@ -3,10 +3,10 @@
 
 <div align="center">
 
-  <h3 align="center">Cohesive</h3>
+  <h3 align="center">Cohesive Hyprdots</h3>
 
   <p align="center">
-    A clean, fast, and cohesive Hyprland setup focused on visual consistency and smooth workflow.
+    A Hyprland setup built around visual consistency and seamless theme transitions.
     <br />
     <br />
     <a href="#demo">View Demo</a>
@@ -19,23 +19,20 @@
 
 ---
 
-## Demo
+<div id="demo"></div>
 
-> Full showcase of themes, workflow, and UI components
-
-<video src="./assets/demo.mp4"><video>
+![demo](./assets/demo.gif)
 
 ---
 
 ## Features
 
-- 3 themes with 6 variants
-- Rofi-based variant switcher with previews
-- Custom Waybar setup
+- Consistent UI across all components
+- 3 themes × 6 variants
+- Custom Waybar with consistent visual design
 - SwayNC notifications + SwayOSD integration
 - Styled Hyprlock with dynamic backgrounds
 - Smooth wallpaper transitions
-- Consistent UI across all components
 
 ---
 
@@ -71,9 +68,7 @@ cd ~/dotfiles
 
 ## Theme System
 
-Themes are organized into variants with a unified structure.
-
-Switch variants using a **Rofi-based selector with live previews**.
+Centralized theme system controlling all visual elements.
 
 Each variant updates:
 
