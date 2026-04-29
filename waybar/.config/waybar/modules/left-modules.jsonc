@@ -1,51 +1,38 @@
 {
+  "custom/logo": {
+    "format": "",
+    "tooltip": false,
+  },
 
-    "custom/logo": {
-        "format": "",
-        "tooltip": false
+  "custom/clock": {
+    "exec": "~/.config/waybar/scripts/analog-clock.sh",
+    "interval": 1,
+    "return-type": "json",
+  },
+
+  "clock": {
+    "format": "󰃵 {:%d %b}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#b38eed'><b>{}</b></span>",
+        "days": "<span color='#d0d0e8'><b>{}</b></span>",
+        "weekdays": "<span color='#50fa7b'><b>{}</b></span>",
+        "today": "<span color='#5fd7d3'><b><u>{}</u></b></span>",
+      },
     },
-
-    "custom/clock": {
-        "exec": "~/.config/waybar/scripts/analog-clock.sh",
-        "interval": 1,
-        "return-type": "json"
+    "actions": {
+      "on-click": "mode",
     },
+  },
 
-    "clock": {
-        "format": "󰃵 {:%d %b}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "month",
-            "mode-mon-col": 3,
-            "on-scroll": 1,
-            "format": {
-                "months": "<span color='#b38eed'><b>{}</b></span>",      
-                "days": "<span color='#d0d0e8'><b>{}</b></span>",      
-                "weekdays": "<span color='#50fa7b'><b>{}</b></span>",      
-                "today": "<span color='#5fd7d3'><b><u>{}</u></b></span>"
-            }
-        },
-        "actions": {
-            "on-click": "mode"
-        }
-    },
-
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "tooltip": false, 
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
-
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "tooltip": false,
+    "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+  },
 }

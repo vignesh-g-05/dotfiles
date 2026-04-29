@@ -3,10 +3,10 @@
 
 <div align="center">
 
-  <h3 align="center">Cohesive Hyprdots</h3>
+  <h3 align="center">Hyprdots</h3>
 
   <p align="center">
-    A Hyprland setup built around visual consistency and seamless theme transitions.
+      A Hyprland setup focused on multi-theme support, smooth switching, and a clean workflow.
     <br />
     <br />
     <a href="#demo">View Demo</a>
@@ -27,9 +27,9 @@
 
 ## Features
 
-- Consistent UI across all components
 - 3 themes × 6 variants
-- Custom Waybar with consistent visual design
+- Rofi-based variant switcher
+- Custom Waybar setup
 - SwayNC notifications + SwayOSD integration
 - Styled Hyprlock with dynamic backgrounds
 - Smooth wallpaper transitions
@@ -68,7 +68,7 @@ cd ~/dotfiles
 
 ## Theme System
 
-Centralized theme system controlling all visual elements.
+Centralized theme system for managing wallpapers, colors, and UI elements across variants.
 
 Each variant updates:
 
