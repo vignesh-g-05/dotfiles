@@ -9,7 +9,6 @@ window {
     width: 35%;
     height: 200px;
     padding: 0;
-    border-radius: 16px;
 }
 
 mainbox {
@@ -38,7 +37,7 @@ listview {
 
 element {
     padding: 14px;
-    border-radius: 14px;
+    border-radius: 10px 0;
     background-color: @surface;
 }
 

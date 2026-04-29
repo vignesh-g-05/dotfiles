@@ -7,8 +7,7 @@
 window {
     background-color: @background;
     width: 40%;
-    height: 480px;
-    border-radius: 18px;
+    height: 380px;
 }
 
 mainbox {
@@ -21,7 +20,7 @@ mainbox {
 inputbar {
     children:	["textbox-prompt-colon","entry"];
     background-color: transparent;
-    spacing:	20px;
+    spacing:	0px;
 }
 
 placeholder {
@@ -33,7 +32,7 @@ textbox-prompt-colon {
     expand:                      false;
     str:                         "";
     padding:                     10px 13px;
-    border-radius:               100%;
+    border-radius:               10px 0 0;
     background-color:            @surface;
     text-color:                  @accent;
 }
@@ -41,7 +40,7 @@ textbox-prompt-colon {
 entry {
     placeholder: "Search variant";
     padding: 10px 14px;
-    border-radius: 12px;
+    border-radius: 0 0 10px;
     background-color: @surface;
     color: @foreground;
 }
@@ -57,7 +56,7 @@ element {
     orientation: vertical;
     spacing: 8px;
     padding: 12px;
-    border-radius: 14px;
+    border-radius: 0 10px;
     background-color: transparent;
 }
 

@@ -3,7 +3,7 @@
 window {
     font:		          "JetBrainsMono Nerd Font Propo 12";
     width:               35%;
-    height:              70%;
+    height:              60%;
     padding:		     0px;
     margin:		        0px;
     background-color:	@background;
@@ -20,7 +20,7 @@ mainbox {
 inputbar {
     children:	["textbox-prompt-colon","entry"];
     background-color: transparent;
-    spacing:	20px;
+    spacing:	0px;
 }
 
 placeholder {
@@ -32,14 +32,14 @@ textbox-prompt-colon {
     expand:                      false;
     str:                         "";
     padding:                     10px 13px;
-    border-radius:               100%;
+    border-radius:               10px 0 0;
     background-color:            @surface;
     text-color:                  @accent;
 }
 
 entry {
      placeholder: "search theme";
-     border-radius:  10px;
+     border-radius:  0 0 10px;
      background-color: @surface;
      color: @foreground;
      padding: 10px;
@@ -54,7 +54,7 @@ listview {
 
 element {
     padding:		10px;
-    border-radius:	10px;
+    border-radius:	10px 0;
 }
 
 element-text {
