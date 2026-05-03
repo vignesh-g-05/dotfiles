@@ -9,7 +9,7 @@
       A Hyprland setup focused on multi-theme support, smooth switching, and a clean workflow.
     <br />
     <br />
-    <a href="./assets/demo.mp4">View Demo</a>
+    <a href="https://vignesh-g-05.github.io/dotfiles/assets/demo.mp4">View Demo</a>
     ·
     <a href="https://github.com/vignesh-g-05/dotfiles/issues">Report Bug</a>
     ·
