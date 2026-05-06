@@ -109,11 +109,13 @@ def generate_orbit_toml(colors: dict[str, str]) -> None:
     lines: list[str] = []
 
     accent = colors["accent"]
+    accent_foreground = colors["accent_foreground"]
     background = colors["background"]
     foreground = colors["foreground"]
 
     lines.append(f'accent_primary = "{accent}"')
     lines.append(f'accent_secondary = "{accent}"')
+    lines.append(f'accent_primary_foreground = "{accent_foreground}"')
     lines.append(f'background = "{background}"')
     lines.append(f'foreground = "{foreground}"')
 
