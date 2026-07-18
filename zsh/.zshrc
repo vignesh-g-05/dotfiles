@@ -17,6 +17,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin/dotfiles:$PATH"
+export PATH="$HOME/.local/share/pnpm/bin:$PATH"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
@@ -72,6 +73,7 @@ alias cat='bat'
 alias cd='z'
 alias neofetch='fastfetch'
 alias src='source ~/.zshrc'
+alias copy='wl-copy'
 
 # Startup commands
 if [[ $- == *i* ]]; then
