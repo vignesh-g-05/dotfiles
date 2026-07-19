@@ -9,6 +9,8 @@ Image {
 
     Layout.preferredWidth: size
     Layout.preferredHeight: size
+    height: size
+    width: size
 
     fillMode: Image.PreserveAspectFit
 }

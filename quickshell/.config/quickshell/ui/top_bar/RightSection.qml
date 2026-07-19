@@ -1,7 +1,8 @@
 import QtQuick.Layouts
 
-import qs.modules.network
+import qs.modules.battery
 import qs.modules.control_center
+import qs.modules.network
 import qs.modules.notification
 import qs.modules.power_options
 
@@ -14,5 +15,6 @@ RowLayout {
     Network {}
     ControlCenter {}
     Notification {}
+    Battery {}
     PowerOptions {}
 }
